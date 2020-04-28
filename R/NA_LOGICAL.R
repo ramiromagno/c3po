@@ -1,0 +1,4 @@
+#' NA_LOGICAL
+#'
+#' @name NA_LOGICAL
+NULL
