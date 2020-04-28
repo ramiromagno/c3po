@@ -1,5 +1,32 @@
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+
+language: R
+sudo: false
+cache: packages
+
+r:
+  - oldrel
+  - release
+  - devel
+
+# Strict checks in place
+warnings_are_errors: true
+
+branches:
+  only:
+    - master
+
+repos:
+  CRAN: https://cran.rstudio.com/
+
+r_packages:
+  - knitr
+  - rmarkdown
+  - remotes
+  - utils
+
 before_cache: Rscript -e 'remotes::install_cran("pkgdown")'
 deploy:
   provider: script
-script: Rscript -e 'pkgdown::deploy_site_github()'
-skip_cleanup: true
+  script: Rscript -e 'pkgdown::deploy_site_github()'
+  skip_cleanup: true
