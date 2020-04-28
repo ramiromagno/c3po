@@ -1,0 +1,114 @@
+---
+title: "C Entity Badges"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{C Entities Badges}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Variable
+
+
+```{r echo=FALSE}
+knitr::include_graphics("../man/figures/variable.svg")
+```
+
+Global variables.
+
+## Struct
+
+```{r echo=FALSE}
+knitr::include_graphics("../man/figures/struct.svg")
+```
+
+C struct declarations.
+
+## Enum
+
+```{r echo=FALSE}
+knitr::include_graphics("../man/figures/enum.svg")
+```
+
+C enum declarations.
+
+## Macro
+
+```{r echo=FALSE}
+knitr::include_graphics("../man/figures/mobj.svg")
+knitr::include_graphics("../man/figures/mfn.svg")
+```
+
+C preprocessor macros are identified with two badges, one for object-like, and another for function-like.
+
+## Typedef
+
+```{r echo=FALSE}
+typedef_badges <- c(
+  'typedef-dtype.svg',
+  'typedef-str.svg',
+  'typedef-strp.svg',
+  'typedef-pointer.svg',
+  'typedef-array.svg',
+  'typedef-enum.svg',
+  'typedef-fnp.svg'
+)
+knitr::include_graphics(file.path('../man/figures', typedef_badges))
+```
+
+C typedefs are subdivided into:
+
+- typedef predefined data type
+- typedef struct
+- typedef struct pointer
+- typedef pointer
+- typedef array
+- typedef enum
+- typedef function pointer
+
+## Function
+
+### Purity
+
+```{r echo=FALSE}
+knitr::include_graphics("../man/figures/fnp.svg")
+knitr::include_graphics("../man/figures/fni.svg")
+```
+
+A pure(ish) function is one that is mainly run for its return value, whereas an impure function, is one that is run for its side effects.
+
+### Interface
+
+```{r echo=FALSE}
+knitr::include_graphics("../man/figures/c2r.svg")
+knitr::include_graphics("../man/figures/r2c.svg")
+```
+
+If a function converts a C data typed object to a `SEXP` object (R object in C), then it gets the badge *interface C to R*, if the reverse is true, then it gets the badge *interface R to C*.
+
+### Needs PROTECT
+
+```{r echo=FALSE}
+knitr::include_graphics("../man/figures/prot.svg")
+```
+
+Those functions that return R objects allocated from the heap will, eventually, be freed by the garbage collector. Because this is an automatic process, it is left to the developer to signal those objects that should be protected from the garbage collector. The way to do this is by wrapping those objects in `PROTECT()`. This is indicated with the *needs PROTECT* badge.
+
+## USE_INTERNALS
+
+```{r echo=FALSE}
+knitr::include_graphics("../man/figures/USE_RINTERNALS.svg")
+```
+
+Some declarations might not be immediately accessible if the macro `USE_RINTERNALS` is not defined. Those C entities that require it are identified with this badge.
+
+> All code in R extensions is by default behind the write barrier. The only way to obtain direct access to the internals of the SEXPRECs is to define ‘USE_RINTERNALS’ before including header file Rinternals.h, which is normally defined in Defn.h. To enable a check on the way that the access is used, R can be compiled with flag --enable-strict-barrier which ensures that header Defn.h does not define ‘USE_RINTERNALS’ and hence that SEXP is opaque in most of R itself. (There are some necessary exceptions: foremost in file memory.c where the accessor functions are defined and also in file size.c which needs access to the sizes of the internal structures.)
+>
+> `r tufte::quote_footer('--- Section 1.7, R Internals documentation.')`

@@ -1,0 +1,25 @@
+#' SEXP
+#'
+#' @description
+#'
+#' ![](typedef-strp.svg "typedef struct pointer")
+#'
+#' A pointer to an object of type \code{\link{SEXPREC}}. SEXP is R’s fundamental
+#' data type at the C-level. SEXP is short for symbolic expression and is
+#' borrowed from Lisp. SEXP is a variant type, with subtypes for all R’s data
+#' structures. Note that the internal structure of the \code{\link{SEXPREC}} is
+#' not made available to R Extensions: rather SEXP is an opaque pointer, and the
+#' internals can only be accessed by the functions provided.
+#'
+#' @section Declaration:
+#' \code{typedef struct} \code{\link{SEXPREC}}\code{ *SEXP;}
+#'
+#' In [Rinternals.h](https://github.com/wch/r-source/blob/trunk/src/include/Rinternals.h).
+#'
+#' @references \url{https://cran.r-project.org/doc/manuals/r-release/R-ints.html#SEXPs}
+#'
+#' @seealso
+#' [SEXPREC]
+#'
+#' @name SEXP
+NULL

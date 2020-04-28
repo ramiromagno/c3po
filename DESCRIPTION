@@ -1,0 +1,21 @@
+Package: c3po
+Type: Package
+Title: From C to R and back again
+Version: 0.1.0
+Authors@R: c(
+    person(given = "Ramiro", family = "Magno", email = "ramiro.magno@gmail.com",
+    role = c("aut", "cre"), comment = c(ORCID = "0000-0001-5226-3441")),
+    person("Centre for Biomedical Research, University of Algarve", role = c("cph", "fnd"))
+    )
+Description: Non-official documentation for R's C internal API.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.0
+Roxygen: list(markdown = TRUE)
+Imports: 
+    inline
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
