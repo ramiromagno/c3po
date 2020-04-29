@@ -23,7 +23,6 @@ r_packages:
   - knitr
   - rmarkdown
   - remotes
-  - utils
   - tufte
 
 before_cache: Rscript -e 'remotes::install_cran("pkgdown")'
