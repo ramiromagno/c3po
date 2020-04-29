@@ -5,6 +5,25 @@ vignette: >
   %\VignetteIndexEntry{C Entities Badges}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+resource_files:
+  - '../man/figures/variable.svg'
+  - '../man/figures/struct.svg'
+  - '../man/figures/enum.svg'
+  - '../man/figures/mobj.svg'
+  - '../man/figures/mfn.svg'
+  - '../man/figures/typedef-dtype.svg'
+  - '../man/figures/typedef-str.svg'
+  - '../man/figures/typedef-strp.svg'
+  - '../man/figures/typedef-pointer.svg'
+  - '../man/figures/typedef-array.svg'
+  - '../man/figures/typedef-enum.svg'
+  - '../man/figures/typedef-fnp.svg'
+  - '../man/figures/fnp.svg'
+  - '../man/figures/fni.svg'
+  - '../man/figures/c2r.svg'
+  - '../man/figures/r2c.svg'
+  - '../man/figures/prot.svg'
+  - '../man/figures/USE_RINTERNALS.svg'
 ---
 
 ```{r, include = FALSE}
@@ -111,4 +130,4 @@ Some declarations might not be immediately accessible if the macro `USE_RINTERNA
 
 > All code in R extensions is by default behind the write barrier. The only way to obtain direct access to the internals of the SEXPRECs is to define ‘USE_RINTERNALS’ before including header file Rinternals.h, which is normally defined in Defn.h. To enable a check on the way that the access is used, R can be compiled with flag --enable-strict-barrier which ensures that header Defn.h does not define ‘USE_RINTERNALS’ and hence that SEXP is opaque in most of R itself. (There are some necessary exceptions: foremost in file memory.c where the accessor functions are defined and also in file size.c which needs access to the sizes of the internal structures.)
 >
-> `r tufte::quote_footer('--- Section 1.7, R Internals documentation.')`
+> --- Section 1.7, R Internals documentation.

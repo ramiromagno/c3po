@@ -14,8 +14,7 @@ LazyData: true
 RoxygenNote: 7.1.0
 Roxygen: list(markdown = TRUE)
 Imports: 
-    inline,
-    tufte
+    inline
 Suggests: 
     knitr,
     rmarkdown
