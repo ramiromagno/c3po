@@ -5,9 +5,8 @@ sudo: false
 cache: packages
 
 r:
-  - oldrel
   - release
-  - devel
+
 
 # Strict checks in place
 warnings_are_errors: true
