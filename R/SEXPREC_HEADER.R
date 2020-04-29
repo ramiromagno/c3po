@@ -5,12 +5,12 @@
 #' \Sexpr[results=rd, stage=render]{c3po:::badge('mobj')} \Sexpr[results=rd, stage=render]{c3po:::badge('USE_RINTERNALS')}
 #'
 #' SEXPREC_HEADER is a macro comprising the declaration of four objects:
-#'   * `struct `[sxpinfo_struct]` sxpinfo`
-#'   * `struct `[SEXPREC]` *attrib`
-#'   * `struct `[SEXPREC]` *gengc_next_node`
-#'   * `struct `[SEXPREC]` *gengc_prev_node`
+#'   - \code{struct \link{sxpinfo_struct} sxpinfo}
+#'   - \code{struct \link{SEXPREC} *attrib}
+#'   - \code{struct \link{SEXPREC} *gengc_next_node}
+#'   - \code{struct \link{SEXPREC} *gengc_prev_node}
 #'
-#' SEXPREC_HEADER is used in the declaration of [SEXPREC].
+#' SEXPREC_HEADER is used in the declaration of \link{SEXPREC}.
 #'
 #' @section Declaration:
 #' ```

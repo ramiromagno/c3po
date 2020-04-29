@@ -8,7 +8,7 @@
 
 \code{struct sxpinfo_struct} is a struct of 13 members:
 \itemize{
-\item \link{SEXPTYPE}\code{ type}
+\item \code{\link{SEXPTYPE} type}
 \item \verb{unsigned int scalar}
 \item \verb{unsigned int obj}
 \item \verb{unsigned int alt}
@@ -23,7 +23,7 @@
 \item \verb{unsigned int extra}
 }
 
-\code{struct sxpinfo_struct} is used in the definition of \link{SEXPREC_HEADER}.
+\code{struct sxpinfo_struct} is used in the definition of \code{\link{SEXPREC_HEADER}}.
 }
 \section{Declaration}{
 \preformatted{struct sxpinfo_struct \{

@@ -8,10 +8,10 @@
 
 SEXPREC_HEADER is a macro comprising the declaration of four objects:
 \itemize{
-\item \code{struct }\link{sxpinfo_struct}\code{ sxpinfo}
-\item \code{struct }\link{SEXPREC}\verb{ *attrib}
-\item \code{struct }\link{SEXPREC}\verb{ *gengc_next_node}
-\item \code{struct }\link{SEXPREC}\verb{ *gengc_prev_node}
+\item \code{struct \link{sxpinfo_struct} sxpinfo}
+\item \code{struct \link{SEXPREC} *attrib}
+\item \code{struct \link{SEXPREC} *gengc_next_node}
+\item \code{struct \link{SEXPREC} *gengc_prev_node}
 }
 
 SEXPREC_HEADER is used in the declaration of \link{SEXPREC}.

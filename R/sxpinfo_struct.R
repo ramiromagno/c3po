@@ -5,7 +5,7 @@
 #' \Sexpr[results=rd, stage=render]{c3po:::badge('struct')} \Sexpr[results=rd, stage=render]{c3po:::badge('USE_RINTERNALS')}
 #'
 #' \code{struct sxpinfo_struct} is a struct of 13 members:
-#'   * [SEXPTYPE]\code{ type}
+#'   * \code{\link{SEXPTYPE} type}
 #'   * `unsigned int scalar`
 #'   * `unsigned int obj`
 #'   * `unsigned int alt`
@@ -20,7 +20,7 @@
 #'   * `unsigned int extra`
 #'
 #'
-#' \code{struct sxpinfo_struct} is used in the definition of [SEXPREC_HEADER].
+#' \code{struct sxpinfo_struct} is used in the definition of \code{\link{SEXPREC_HEADER}}.
 #'
 #' @section Declaration:
 #' ```

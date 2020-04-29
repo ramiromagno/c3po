@@ -7,12 +7,12 @@
 #' S-expression (SEXP) record (REC) structure, a C structure underlying every R
 #' object. Accessible via a pointer of type \code{\link{SEXP}}.
 #'
-#' The SEXPREC is composed of 2 parts (5 struct members in total):
-#' * Header, [SEXPREC_HEADER]:
-#'   * `struct `[sxpinfo_struct]` sxpinfo`
-#'   * `struct SEXPREC *attrib`
-#'   * `struct SEXPREC *gengc_next_node`
-#'   * `struct SEXPREC *gengc_prev_node`
+#' The SEXPREC is composed of two parts (five struct members in total):
+#' - Header, \code{\link{SEXPREC_HEADER}}:
+#'   - \code{struct \link{sxpinfo_struct} sxpinfo}
+#'   - \code{struct SEXPREC *attrib}
+#'   - \code{struct SEXPREC *gengc_next_node}
+#'   - \code{struct SEXPREC *gengc_prev_node}
 #' * Node data, `u`.
 #'
 #' @section Declaration:

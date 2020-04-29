@@ -9,15 +9,17 @@
 S-expression (SEXP) record (REC) structure, a C structure underlying every R
 object. Accessible via a pointer of type \code{\link{SEXP}}.
 
-The SEXPREC is composed of 2 parts (5 struct members in total):
+The SEXPREC is composed of two parts (five struct members in total):
 \itemize{
-\item Header, \link{SEXPREC_HEADER}:
+\item Header, \code{\link{SEXPREC_HEADER}}:
 \itemize{
-\item \code{struct }\link{sxpinfo_struct}\code{ sxpinfo}
-\item \verb{struct SEXPREC *attrib}
-\item \verb{struct SEXPREC *gengc_next_node}
-\item \verb{struct SEXPREC *gengc_prev_node}
+\item \code{struct \link{sxpinfo_struct} sxpinfo}
+\item \code{struct SEXPREC *attrib}
+\item \code{struct SEXPREC *gengc_next_node}
+\item \code{struct SEXPREC *gengc_prev_node}
 }
+}
+\itemize{
 \item Node data, \code{u}.
 }
 }

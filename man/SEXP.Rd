@@ -15,7 +15,7 @@ internals can only be accessed by the functions provided.
 }
 \section{Declaration}{
 
-\code{typedef struct} \code{\link{SEXPREC}}\code{ *SEXP;}
+\code{typedef struct \link{SEXPREC} *SEXP;}
 
 In \href{https://github.com/wch/r-source/blob/trunk/src/include/Rinternals.h}{Rinternals.h}.
 }
