@@ -157,9 +157,7 @@
 <p>Some declarations might not be immediately accessible if the macro <code>USE_RINTERNALS</code> is not defined. Those C entities that require it are identified with this badge.</p>
 <blockquote>
 <p>All code in R extensions is by default behind the write barrier. The only way to obtain direct access to the internals of the SEXPRECs is to define ‘USE_RINTERNALS’ before including header file Rinternals.h, which is normally defined in Defn.h. To enable a check on the way that the access is used, R can be compiled with flag –enable-strict-barrier which ensures that header Defn.h does not define ‘USE_RINTERNALS’ and hence that SEXP is opaque in most of R itself. (There are some necessary exceptions: foremost in file memory.c where the accessor functions are defined and also in file size.c which needs access to the sizes of the internal structures.)</p>
-<footer>
-— Section 1.7, R Internals documentation.
-</footer>
+<p>— Section 1.7, R Internals documentation.</p>
 </blockquote>
 </div>
   </div>
