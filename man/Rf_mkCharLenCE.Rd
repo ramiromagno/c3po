@@ -14,7 +14,7 @@
 A \link{SEXP} object, namely TODO...
 }
 \description{
-\figure{fnp.svg}{Pure function} \figure{c2r.svg}{C to R} \figure{prot.svg}{protect}
+\Sexpr[results=rd, stage=render]{c3po:::badge('fnp')} \Sexpr[results=rd, stage=render]{c3po:::badge('c2r')} \Sexpr[results=rd, stage=render]{c3po:::badge('prot')}
 
 TODO
 }

@@ -2,7 +2,7 @@
 #'
 #' @description
 #'
-#' ![](typedef-str.svg "typedef struct") ![](USE_RINTERNALS.svg "requires USE_RINTERNALS")
+#' \Sexpr[results=rd, stage=render]{c3po:::badge('typedef-str')} \Sexpr[results=rd, stage=render]{c3po:::badge('USE_RINTERNALS')}
 #'
 #' SEXPTYPE is an alias to an \code{unsigned int}. It is used to encode the type
 #' of R object that a SEXPREC holds, namely in \code{struct

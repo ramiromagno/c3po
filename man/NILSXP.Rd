@@ -4,7 +4,7 @@
 \alias{NILSXP}
 \title{NILSXP}
 \description{
-\figure{mobj.svg}{macro object-like}
+\Sexpr[results=rd, stage=render]{c3po:::badge('mobj')}
 
 There is only one object of type NILSXP, \link{R_NilValue}, with no data.
 }

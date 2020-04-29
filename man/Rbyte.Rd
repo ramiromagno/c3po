@@ -4,7 +4,7 @@
 \alias{Rbyte}
 \title{Rbyte}
 \description{
-\figure{typedef-dtype.svg}{typedef predefined data type}
+\Sexpr[results=rd, stage=render]{c3po:::badge('typedef-dtype')}
 
 Rbyte is an alias to an \code{unsigned char}.
 }

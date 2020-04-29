@@ -2,7 +2,7 @@
 #'
 #' @description
 #'
-#' ![](struct.svg "struct") ![](USE_RINTERNALS.svg "requires USE_RINTERNALS")
+#' \Sexpr[results=rd, stage=render]{c3po:::badge('struct')} \Sexpr[results=rd, stage=render]{c3po:::badge('USE_RINTERNALS')}
 #'
 #' \code{struct sxpinfo_struct} is a struct of 13 members:
 #'   * [SEXPTYPE]\code{ type}

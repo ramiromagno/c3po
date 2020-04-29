@@ -11,7 +11,7 @@
 A \link{SEXP} object, namely a length one \code{logical} vector.
 }
 \description{
-\figure{fnp.svg}{Pure function} \figure{c2r.svg}{C to R} \figure{prot.svg}{protect}
+\Sexpr[results=rd, stage=render]{c3po:::badge('fnp')} \Sexpr[results=rd, stage=render]{c3po:::badge('c2r')} \Sexpr[results=rd, stage=render]{c3po:::badge('prot')}
 
 Converts an \code{int x} to a \link{SEXP} object that represents an R length one
 \code{logical} vector. The mapping from C integers to R's logical is:

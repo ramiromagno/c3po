@@ -4,7 +4,7 @@
 \alias{SEXPREC_HEADER}
 \title{SEXPREC_HEADER}
 \description{
-\figure{mobj.svg}{macro object-like} \figure{USE_RINTERNALS.svg}{requires USE_RINTERNALS}
+\Sexpr[results=rd, stage=render]{c3po:::badge('mobj')} \Sexpr[results=rd, stage=render]{c3po:::badge('USE_RINTERNALS')}
 
 SEXPREC_HEADER is a macro comprising the declaration of four objects:
 \itemize{

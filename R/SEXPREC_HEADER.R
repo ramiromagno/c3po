@@ -2,7 +2,7 @@
 #'
 #' @description
 #'
-#' ![](mobj.svg "macro object-like") ![](USE_RINTERNALS.svg "requires USE_RINTERNALS")
+#' \Sexpr[results=rd, stage=render]{c3po:::badge('mobj')} \Sexpr[results=rd, stage=render]{c3po:::badge('USE_RINTERNALS')}
 #'
 #' SEXPREC_HEADER is a macro comprising the declaration of four objects:
 #'   * `struct `[sxpinfo_struct]` sxpinfo`

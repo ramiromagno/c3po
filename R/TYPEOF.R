@@ -2,7 +2,7 @@
 #'
 #' @description
 #'
-#' ![](mfn.svg "Macro function-like")
+#' \Sexpr[results=rd, stage=render]{c3po:::badge('mfn')}
 #'
 #' \code{TYPEOF} is a macro, function-like, that determines the type of an
 #' [SEXPREC] object.

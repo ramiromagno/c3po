@@ -4,7 +4,7 @@
 \alias{Rcomplex}
 \title{Rcomplex}
 \description{
-\figure{typedef-str.svg}{typedef struct}
+\Sexpr[results=rd, stage=render]{c3po:::badge('typedef-str')}
 
 \code{Rcomplex} is a C struct that represents a complex number, and hence contains two members:
 \itemize{

@@ -2,7 +2,7 @@
 #'
 #' @description
 #'
-#' ![](fnp.svg "Pure function") ![](c2r.svg "C to R") ![](prot.svg "protect")
+#' \Sexpr[results=rd, stage=render]{c3po:::badge('fnp')} \Sexpr[results=rd, stage=render]{c3po:::badge('c2r')} \Sexpr[results=rd, stage=render]{c3po:::badge('prot')}
 #'
 #' Converts an \code{int x} to a [SEXP] object that represents an R length one
 #' \code{logical} vector. The mapping from C integers to R's logical is:

@@ -2,7 +2,7 @@
 #'
 #' @description
 #'
-#' ![](cheader.svg "C header file")
+#' \Sexpr[results=rd, stage=render]{c3po:::badge('cheader')}
 #'
 #' Rinternals.h header file.
 #'

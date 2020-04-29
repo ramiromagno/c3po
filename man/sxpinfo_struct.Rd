@@ -4,7 +4,7 @@
 \alias{sxpinfo_struct}
 \title{struct sxpinfo_struct}
 \description{
-\figure{struct.svg}{struct} \figure{USE_RINTERNALS.svg}{requires USE_RINTERNALS}
+\Sexpr[results=rd, stage=render]{c3po:::badge('struct')} \Sexpr[results=rd, stage=render]{c3po:::badge('USE_RINTERNALS')}
 
 \code{struct sxpinfo_struct} is a struct of 13 members:
 \itemize{

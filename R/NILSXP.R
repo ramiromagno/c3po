@@ -2,7 +2,7 @@
 #'
 #' @description
 #'
-#' ![](mobj.svg "macro object-like")
+#' \Sexpr[results=rd, stage=render]{c3po:::badge('mobj')}
 #'
 #' There is only one object of type NILSXP, [R_NilValue], with no data.
 #'

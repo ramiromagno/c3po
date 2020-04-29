@@ -2,7 +2,7 @@
 #'
 #' @description
 #'
-#' ![](typedef-str.svg "typedef struct") ![](USE_RINTERNALS.svg "requires USE_RINTERNALS")
+#' \Sexpr[results=rd, stage=render]{c3po:::badge('typedef-str')}\Sexpr[results=rd, stage=render]{c3po:::badge('USE_RINTERNALS')}
 #'
 #' S-expression (SEXP) record (REC) structure, a C structure underlying every R
 #' object. Accessible via a pointer of type \code{\link{SEXP}}.

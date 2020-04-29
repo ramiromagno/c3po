@@ -4,7 +4,7 @@
 \alias{R_NilValue}
 \title{R_NilValue}
 \description{
-\figure{variable.svg}{variable}
+\Sexpr[results=rd, stage=render]{c3po:::badge('variable')}
 
 R_NilValue is a global (external) variable of type \link{SEXP}. This is the C
 counterpart of R's \code{\link{NULL}}.
