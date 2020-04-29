@@ -1,0 +1,11 @@
+.navbar {
+  background-color: rgb(252, 239, 206);
+}
+
+#navbar a {
+color: rgb(217, 171, 0);
+}
+
+.navbar-link .fa .fa-home .fa-lg {
+  color: rgb(217, 171, 0);
+}
