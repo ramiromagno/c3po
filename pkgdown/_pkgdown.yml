@@ -1,1 +1,40 @@
 url: https://rmagno.eu/c3po
+
+reference:
+- title: "Macros"
+  desc: >
+- contents:
+  - TYPEOF
+  - NILSXP
+  - NA_LOGICAL
+- title: "Types"
+  desc: >
+- contents:
+  - SEXP
+  - SEXPTYPE
+  - SEXPREC_HEADER
+  - SEXPREC
+  - sxpinfo_struct
+  - Rbyte
+- title: "Variables"
+  desc: >
+- contents:
+  - R_NilValue
+  - R_LogicalNAValue
+  - R_FalseValue
+  - R_TrueValue
+  - Rcomplex
+- title: "Functions"
+  desc: >
+- contents:
+  - Rf_ScalarLogical
+  - Rf_ScalarInteger
+  - Rf_ScalarReal
+  - Rf_ScalarComplex
+  - Rf_ScalarRaw
+  - Rf_mkCharLenCE
+- title: "Files"
+  desc: >
+- contents:
+  - Rinternals.h
+
