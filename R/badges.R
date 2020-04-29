@@ -28,7 +28,7 @@ badge <- function(id)
 
 
   img <- sprintf(
-    "\\out{<a href='https://rmagno.eu/c3po/entities'><img src='figures/%s.svg' alt='%s'></a>}", id, name)
+    "\\out{<a href='https://rmagno.eu/c3po/articles/entities.html'><img src='figures/%s.svg' alt='%s'></a>}", id, name)
 
   sprintf("\\ifelse{html}{%s}{\\strong{%s}}", img, name)
 }
