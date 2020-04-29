@@ -26,8 +26,13 @@ To access the help page about the C function `Rf_ScalarReal`:
 
 ``` r
 library(c3po)
-
 ?Rf_ScalarReal
 ```
 
-<img src='man/figures/Rf_ScalarReal_help.png' align="left" />
+Browse the online documentation: <https://rmagno.eu/c3po>.
+
+## Help
+
+Help is emphatically appreciated\! This package is at its infancy still,
+so if you feel like you can help documenting R’s C API, please do. I
+will be glad to accept pull requests.
