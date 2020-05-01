@@ -2,25 +2,61 @@
 % Please edit documentation in R/SEXPTYPE.R
 \name{SEXPTYPE}
 \alias{SEXPTYPE}
-\title{SEXPTYPE}
+\title{Data type for coding of R data subtypes}
 \description{
-\Sexpr[results=rd, stage=render]{c3po:::badge('typedef-str')} \Sexpr[results=rd, stage=render]{c3po:::badge('USE_RINTERNALS')}
+\Sexpr[results=rd, stage=render]{c3po:::badge('typedef-dtype')} \Sexpr[results=rd, stage=render]{c3po:::badge('USE_RINTERNALS')}
 
 SEXPTYPE is an alias to an \code{unsigned int}. It is used to encode the type
-of R object that a SEXPREC holds, namely in \code{struct
+of an R object that \code{\link{SEXPREC}} holds, namely in \code{struct
 \link{sxpinfo_struct}}, where it works to declare the type of the struct
-member \code{type}.
+member \code{type}. To access the type of a \code{\link{SEXPREC}} you can use
+\code{\link{TYPEOF}}.
 }
 \section{Declaration}{
-\preformatted{}
+\preformatted{typedef unsigned int SEXPTYPE;
+}
 
 In \href{https://github.com/wch/r-source/blob/trunk/src/include/Rinternals.h}{Rinternals.h}.
+}
+
+\section{SEXPTYPEs and \R objects}{
+\tabular{ll}{
+   \code{SEXPTYPE} (int) \tab \R object \cr
+   \code{\link{NILSXP}} (0) \tab The null object in \R, see \code{\link{NULL}}. \cr
+   \code{\link{SYMSXP}} (1) \tab Names and symbols, see \code{\link{name}}. \cr
+   \code{\link{LISTSXP}} (2) \tab Lists of dotted pairs, see \code{\link{pairlist}}. \cr
+   \code{\link{CLOSXP}} (3) \tab Functions, see \code{\link{closure}}. \cr
+   \code{\link{ENVSXP}} (4) \tab Environments, see \code{\link{environment}}. \cr
+   \code{\link{PROMSXP}} (5) \tab Promises, see \code{\link{promise}}. \cr
+   \code{\link{LANGSXP}} (6) \tab Language objects are calls (including formulae), see \code{\link{call}} and \code{\link{formula}}. \cr
+   \code{\link{SPECIALSXP}} (7) \tab Special forms. \cr
+   \code{\link{BUILTINSXP}} (8) \tab Builtin non-special forms. \cr
+   \code{\link{CHARSXP}} (9) \tab "scalar" string type (internal only). \cr
+   \code{\link{LGLSXP}} (10) \tab Logical vectors, see \code{\link{logical}}. \cr
+   \code{\link{INTSXP}} (13) \tab Integer vectors, see \code{\link{integer}}. \cr
+   \code{\link{REALSXP}} (14) \tab Double vectors, see \code{\link{double}}. \cr
+   \code{\link{CPLXSXP}} (15) \tab Complex vectors, see \code{\link{complex}}. \cr
+   \code{\link{STRSXP}} (16) \tab Character vectors, see \code{\link{character}}. \cr
+   \code{\link{DOTSXP}} (17) \tab Dot-dot-dot object, \link[base]{dots}. \cr
+   \code{\link{ANYSXP}} (18) \tab Make "any" args work. \cr
+   \code{\link{VECSXP}} (19) \tab Generic vectors, i.e. lists, see \code{\link{list}}. \cr
+   \code{\link{EXPRSXP}} (20) \tab Expressions vectors, see \code{\link{expression}}. \cr
+   \code{\link{BCODESXP}} (21) \tab Byte code. \cr
+   \code{\link{EXTPTRSXP}} (22) \tab External pointer. \cr
+   \code{\link{WEAKREFSXP}} (23) \tab Weak reference \cr
+   \code{\link{RAWSXP}} (24) \tab Raw bytes, see \code{\link{raw}}. \cr
+   \code{\link{S4SXP}} (25) \tab S4, non-vector, see S4 \code{\link[methods]{Introduction}}. \cr
+   \code{\link{NEWSXP}} (30) \tab Fresh node created in new page. \cr
+   \code{\link{FREESXP}} (31) \tab Node released by GC. \cr
+   \code{\link{FUNSXP}} (99) \tab Pseudo-type lumping closure, builtin and special. \cr
+}
 }
 
 \references{
 \url{https://cran.r-project.org/doc/manuals/r-patched/R-ints.html#SEXPTYPEs}
 }
 \seealso{
+\link{TYPEOF},
 \link{sxpinfo_struct},
 \link{SEXP},
 \link{SEXPREC}

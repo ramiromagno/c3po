@@ -20,6 +20,8 @@ badge <- function(id)
       'fni' = 'Function, impure',
       'c2r' = 'C to R',
       'r2c' = 'R to C',
+      'r2r' = 'R to R',
+      'c2c' = 'C to C',
       'prot' = 'Needs PROTECT()',
       'USE_RINTERNALS' = 'Requires USE_RINTERNALS',
       'cheader' = 'C header file',

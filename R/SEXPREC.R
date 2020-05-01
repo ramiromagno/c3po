@@ -1,4 +1,4 @@
-#' SEXPREC
+#' R's fundamental data type at C level
 #'
 #' @description
 #'
@@ -6,6 +6,8 @@
 #'
 #' S-expression (SEXP) record (REC) structure, a C structure underlying every R
 #' object. Accessible via a pointer of type \code{\link{SEXP}}.
+#' \code{\link{SEXPREC}} is a variant type, with subtypes for all \R’s data
+#' structures (see \code{\link{SEXPTYPE}} for a list of subtypes).
 #'
 #' The SEXPREC is composed of two parts (five struct members in total):
 #' - Header, \code{\link{SEXPREC_HEADER}}:

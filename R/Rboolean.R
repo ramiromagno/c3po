@@ -1,0 +1,30 @@
+#' R's boolean type
+#'
+#' @description
+#'
+#' \Sexpr[results=rd, stage=render]{c3po:::badge('typedef-enum')}
+#'
+#' \code{Rboolean} is an enumerated type for boolean variables. The symbolic
+#' constants defined by this enumerated type are: \code{FALSE} (\code{= 0}) and
+#' \code{TRUE} (\code{= 1}).
+#'
+#' @section Declaration:
+#' ```
+#' typedef enum { FALSE = 0, TRUE /*, MAYBE */ } Rboolean;
+#' ```
+#' In [Boolean.h](https://github.com/wch/r-source/blob/trunk/src/include/R_ext/Boolean.h).
+#'
+#' @examples
+#' rboolean <- inline::cfunction(NULL,
+#'  ' Rboolean false_x = FALSE;
+#'    Rboolean true_x = TRUE;
+#'    Rprintf("Rboolean FALSE is: %d\\n", false_x);
+#'    Rprintf("Rboolean TRUE is: %d\\n", true_x);
+#'    return R_NilValue;
+#'  ')
+#'
+#' invisible(rboolean())
+#'
+#' @name Rboolean
+#'
+NULL

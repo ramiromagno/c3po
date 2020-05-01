@@ -2,14 +2,16 @@
 % Please edit documentation in R/NILSXP.R
 \name{NILSXP}
 \alias{NILSXP}
-\title{NILSXP}
+\title{The type of R's NULL}
 \description{
 \Sexpr[results=rd, stage=render]{c3po:::badge('mobj')}
 
-There is only one object of type NILSXP, \link{R_NilValue}, with no data.
+\code{NILSXP} is an object-like macro defining the \code{\link{SEXPTYPE}}
+type of a \code{\link{SEXPREC}} object pointed by \code{\link{R_NilValue}}
+(the R level \code{\link{NULL}} object).
 }
 \section{Declaration}{
-\preformatted{define NILSXP 0 /* nil = NULL */
+\preformatted{#define NILSXP 0 /* nil = NULL */
 }
 
 In \href{https://github.com/wch/r-source/blob/trunk/src/include/Rinternals.h}{Rinternals.h}.
@@ -20,5 +22,6 @@ In \href{https://github.com/wch/r-source/blob/trunk/src/include/Rinternals.h}{Ri
 }
 \seealso{
 \link{SEXPTYPE},
-\link{R_NilValue}
+\link{R_NilValue},
+\link{TYPEOF}
 }

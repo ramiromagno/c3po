@@ -2,21 +2,23 @@
 % Please edit documentation in R/TYPEOF.R
 \name{TYPEOF}
 \alias{TYPEOF}
-\title{TYPEOF}
+\title{The type of an R object}
 \arguments{
-\item{x}{an \link{SEXP} pointer.}
+\item{x}{an \code{\link{SEXP}} pointer.}
 }
 \value{
-An \link{SEXPTYPE} value (unsigned int).
+A \code{\link{SEXPTYPE}} value.
 }
 \description{
 \Sexpr[results=rd, stage=render]{c3po:::badge('mfn')}
 
-\code{TYPEOF} is a macro, function-like, that determines the type of an
-\link{SEXPREC} object.
+\code{TYPEOF} is a function-like macro that determines the type of an
+\code{\link{SEXPREC}} object.
 }
 \section{Declaration}{
-\preformatted{#define TYPEOF(x) ((x)->sxpinfo.type)
+
+\code{
+#define TYPEOF(x) ((x)->sxpinfo.type)
 }
 
 In \href{https://github.com/wch/r-source/blob/trunk/src/include/Rinternals.h}{Rinternals.h}.
@@ -51,8 +53,9 @@ sexptype(.GlobalEnv)
 # promises, returns 5
 # But how to get one?
 
-# language, returns 6
+# language (call and formulae), returns 6
 sexptype(call("sin", pi))
+sexptype(~ x + 2)
 
 # special forms, returns 7
 sexptype(.Internal)
@@ -64,7 +67,9 @@ sexptype(.Primitive("sqrt"))
 # No way of getting hold of one of this in R land
 
 # logical vectors, returns 10
-# sexptype(TRUE)
+sexptype(TRUE)
+sexptype(FALSE)
+sexptype(NA)
 
 # codes 12 and 13 are no longer in use
 # used to be for factors and ordered factors in the 1990s

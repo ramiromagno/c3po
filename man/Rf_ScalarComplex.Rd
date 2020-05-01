@@ -5,16 +5,16 @@
 \alias{ScalarComplex}
 \title{Rf_ScalarComplex}
 \arguments{
-\item{x}{an \link{Rcomplex} object.}
+\item{x}{an \code{\link{Rcomplex}} object.}
 }
 \value{
-A \link{SEXP} object, namely a length one \code{\link{complex}} vector.
+A \code{\link{SEXP}} object, namely a length one \code{\link{complex}} vector.
 }
 \description{
 \Sexpr[results=rd, stage=render]{c3po:::badge('fnp')} \Sexpr[results=rd, stage=render]{c3po:::badge('c2r')} \Sexpr[results=rd, stage=render]{c3po:::badge('prot')}
 
-Converts a \link{Rcomplex} \code{x} to a SEXP object that represents an R length one
-\code{complex} vector.
+Converts an \code{\link{Rcomplex} x} to a \code{\link{SEXP}} object that
+represents an \R length one \code{complex} vector.
 }
 \section{Declaration}{
 \preformatted{SEXP Rf_ScalarComplex(Rcomplex x);

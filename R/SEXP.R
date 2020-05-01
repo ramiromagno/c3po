@@ -1,15 +1,14 @@
-#' SEXP
+#' Pointer to SEXPREC
 #'
 #' @description
 #'
 #' \Sexpr[results=rd, stage=render]{c3po:::badge('typedef-strp')}
 #'
-#' A pointer to an object of type \code{\link{SEXPREC}}. SEXP is \R’s fundamental
-#' data type at the C-level. SEXP is short for symbolic expression and is
-#' borrowed from Lisp. SEXP is a variant type, with subtypes for all \R’s data
-#' structures. Note that the internal structure of the \code{\link{SEXPREC}} is
-#' not made available to \R Extensions: rather SEXP is an opaque pointer, and the
-#' internals can only be accessed by the functions provided.
+#' A pointer to an object of type \code{\link{SEXPREC}}, \R’s fundamental data
+#' type at the C-level. SEXP is short for Symbolic EXPression and is borrowed
+#' from Lisp. Note that the internal structure of the \code{\link{SEXPREC}} is
+#' not made available to \R Extensions: rather SEXP is an opaque pointer, and
+#' the internals can only be accessed by the functions provided.
 #'
 #' @section Declaration:
 #' \code{typedef struct \link{SEXPREC} *SEXP;}

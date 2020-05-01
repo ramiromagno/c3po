@@ -4,8 +4,9 @@
 #'
 #' \Sexpr[results=rd, stage=render]{c3po:::badge('variable')}
 #'
-#' R_NilValue is a global (external) variable of type [SEXP]. This is the C
-#' counterpart of R's \code{\link{NULL}}.
+#' \code{R_NilValue} is a global (external) variable of type \code{\link{SEXP}}.
+#' \code{R_NilValue} points to the C level implementation of R's
+#' \code{\link{NULL}} object.
 #'
 #' @section Declaration:
 #' ```

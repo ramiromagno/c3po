@@ -1,21 +1,63 @@
 url: https://rmagno.eu/c3po
 
 reference:
+
+- title: "The R object"
+  desc: >
+    C representation of the R object
+- contents:
+  - SEXP
+  - SEXPREC
+  - SEXPTYPE
+  - SEXPREC_HEADER
+  - sxpinfo_struct
+
+- title: "Types of R objects"
+  desc: >
+    Macros defining the internal types (SEXPTYPE) of R objects
+- contents:
+  - NILSXP
+  - SYMSXP
+  - LISTSXP
+  - CLOSXP
+  - ENVSXP
+  - PROMSXP
+  - LANGSXP
+  - SPECIALSXP
+  - BUILTINSXP
+  - CHARSXP
+  - LGLSXP
+  - INTSXP
+  - REALSXP
+  - CPLXSXP
+  - STRSXP
+  - DOTSXP
+  - ANYSXP
+  - VECSXP
+  - EXPRSXP
+  - BCODESXP
+  - EXTPTRSXP
+  - WEAKREFSXP
+  - RAWSXP
+  - S4SXP
+  - NEWSXP
+  - FREESXP
+  - FUNSXP
+
+- title: "Basic types"
+  desc: >
+    C basic types
+- contents:
+  - Rboolean
+  - Rcomplex
+  - Rbyte
+
 - title: "Macros"
   desc: >
 - contents:
   - TYPEOF
-  - NILSXP
   - NA_LOGICAL
-- title: "Types"
-  desc: >
-- contents:
-  - SEXP
-  - SEXPTYPE
-  - SEXPREC_HEADER
-  - SEXPREC
-  - sxpinfo_struct
-  - Rbyte
+
 - title: "Variables"
   desc: >
 - contents:
@@ -23,8 +65,7 @@ reference:
   - R_LogicalNAValue
   - R_FalseValue
   - R_TrueValue
-  - Rcomplex
-- title: "Functions"
+- title: "Scalar conversions from C to R"
   desc: >
 - contents:
   - Rf_ScalarLogical
@@ -33,6 +74,27 @@ reference:
   - Rf_ScalarComplex
   - Rf_ScalarRaw
   - Rf_mkCharLenCE
+- title: "Scalar conversions from R to C"
+  desc: >
+- contents:
+  - Rf_asLogical
+  - Rf_asInteger
+  - Rf_asReal
+  - CHARACTER_VALUE
+  - STRING_VALUE
+- title: "Coercion"
+  desc: >
+- contents:
+  - Rf_asChar
+
+- title: "Character and Strings"
+  desc: >
+- contents:
+  - Rf_asChar
+  - R_CHAR
+  - CHARACTER_VALUE
+  - STRING_VALUE
+
 - title: "Files"
   desc: >
 - contents:

@@ -4,8 +4,8 @@
 #'
 #' \Sexpr[results=rd, stage=render]{c3po:::badge('fnp')} \Sexpr[results=rd, stage=render]{c3po:::badge('c2r')} \Sexpr[results=rd, stage=render]{c3po:::badge('prot')}
 #'
-#' Converts a [Rcomplex] \code{x} to a SEXP object that represents an R length one
-#' \code{complex} vector.
+#' Converts an \code{\link{Rcomplex} x} to a \code{\link{SEXP}} object that
+#' represents an \R length one \code{complex} vector.
 #'
 #' @section Declaration:
 #' ```
@@ -24,9 +24,9 @@
 #' ```
 #' In [Rinlinedfuns.h](https://github.com/wch/r-source/blob/trunk/src/include/Rinlinedfuns.h).
 #'
-#' @param x an [Rcomplex] object.
+#' @param x an \code{\link{Rcomplex}} object.
 #'
-#' @return A [SEXP] object, namely a length one \code{\link{complex}} vector.
+#' @return A \code{\link{SEXP}} object, namely a length one \code{\link{complex}} vector.
 #'
 #' @examples
 #' # Convert a C complex number to an R length one complex vector

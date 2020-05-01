@@ -1,14 +1,16 @@
-#' NILSXP
+#' The type of R's NULL
 #'
 #' @description
 #'
 #' \Sexpr[results=rd, stage=render]{c3po:::badge('mobj')}
 #'
-#' There is only one object of type NILSXP, [R_NilValue], with no data.
+#' \code{NILSXP} is an object-like macro defining the \code{\link{SEXPTYPE}}
+#' type of a \code{\link{SEXPREC}} object pointed by \code{\link{R_NilValue}}
+#' (the R level \code{\link{NULL}} object).
 #'
 #' @section Declaration:
 #' ```
-#' define NILSXP 0 /* nil = NULL */
+#' #define NILSXP 0 /* nil = NULL */
 #' ```
 #' In [Rinternals.h](https://github.com/wch/r-source/blob/trunk/src/include/Rinternals.h).
 #'
@@ -16,7 +18,8 @@
 #'
 #' @seealso
 #' [SEXPTYPE],
-#' [R_NilValue]
+#' [R_NilValue],
+#' [TYPEOF]
 #'
 #' @name NILSXP
 NULL
