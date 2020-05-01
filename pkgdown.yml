@@ -3,7 +3,7 @@ pkgdown: 1.5.1
 pkgdown_sha: ~
 articles:
   entities: entities.html
-last_built: 2020-04-30T00:06Z
+last_built: 2020-05-01T23:23Z
 urls:
   reference: https://rmagno.eu/c3po/reference
   article: https://rmagno.eu/c3po/articles

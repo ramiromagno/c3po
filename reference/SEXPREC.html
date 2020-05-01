@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SEXPREC — SEXPREC • c3po</title>
+<title>R's fundamental data type at C level — SEXPREC • c3po</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,11 +48,13 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="SEXPREC — SEXPREC" />
+<meta property="og:title" content="R's fundamental data type at C level — SEXPREC" />
 <meta property="og:description" content="
 
 S-expression (SEXP) record (REC) structure, a C structure underlying every R
 object. Accessible via a pointer of type SEXP.
+SEXPREC is a variant type, with subtypes for all R’s data
+structures (see SEXPTYPE for a list of subtypes).
 The SEXPREC is composed of two parts (five struct members in total):
 Header, SEXPREC_HEADER:
 struct sxpinfo_struct sxpinfo
@@ -140,7 +142,7 @@ Node data, u.
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>SEXPREC</h1>
+    <h1>R's fundamental data type at C level</h1>
     
     <div class="hidden name"><code>SEXPREC.Rd</code></div>
     </div>
@@ -149,7 +151,9 @@ Node data, u.
     <p><a href='https://rmagno.eu/c3po/articles/entities.html'><img src='figures/typedef-str.svg' alt='Typedef struct'></a>
 <a href='https://rmagno.eu/c3po/articles/entities.html'><img src='figures/USE_RINTERNALS.svg' alt='Requires USE_RINTERNALS'></a></p>
 <p>S-expression (SEXP) record (REC) structure, a C structure underlying every R
-object. Accessible via a pointer of type <code><a href='SEXP.html'>SEXP</a></code>.</p>
+object. Accessible via a pointer of type <code><a href='SEXP.html'>SEXP</a></code>.
+<code>SEXPREC</code> is a variant type, with subtypes for all <span style="R">R</span>’s data
+structures (see <code><a href='SEXPTYPE.html'>SEXPTYPE</a></code> for a list of subtypes).</p>
 <p>The SEXPREC is composed of two parts (five struct members in total):</p><ul>
 <li><p>Header, <code><a href='SEXPREC_HEADER.html'>SEXPREC_HEADER</a></code>:</p><ul>
 <li><p><code>struct <a href='sxpinfo_struct.html'>sxpinfo_struct</a> sxpinfo</code></p></li>

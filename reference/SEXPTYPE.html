@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SEXPTYPE — SEXPTYPE • c3po</title>
+<title>Data type for coding of R data subtypes — SEXPTYPE • c3po</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,13 +48,14 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="SEXPTYPE — SEXPTYPE" />
+<meta property="og:title" content="Data type for coding of R data subtypes — SEXPTYPE" />
 <meta property="og:description" content="
  
 SEXPTYPE is an alias to an unsigned int. It is used to encode the type
-of R object that a SEXPREC holds, namely in struct
+of an R object that SEXPREC holds, namely in struct
 sxpinfo_struct, where it works to declare the type of the struct
-member type." />
+member type. To access the type of a SEXPREC you can use
+TYPEOF." />
 <meta property="og:image" content="https://rmagno.eu/c3po/logo.svg" />
 
 
@@ -130,18 +131,19 @@ member type." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>SEXPTYPE</h1>
+    <h1>Data type for coding of R data subtypes</h1>
     
     <div class="hidden name"><code>SEXPTYPE.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p><a href='https://rmagno.eu/c3po/articles/entities.html'><img src='figures/typedef-str.svg' alt='Typedef struct'></a>
+    <p><a href='https://rmagno.eu/c3po/articles/entities.html'><img src='figures/typedef-dtype.svg' alt='Typedef predefined data type'></a>
  <a href='https://rmagno.eu/c3po/articles/entities.html'><img src='figures/USE_RINTERNALS.svg' alt='Requires USE_RINTERNALS'></a></p>
 <p>SEXPTYPE is an alias to an <code>unsigned int</code>. It is used to encode the type
-of R object that a SEXPREC holds, namely in <code>struct
+of an R object that <code><a href='SEXPREC.html'>SEXPREC</a></code> holds, namely in <code>struct
 <a href='sxpinfo_struct.html'>sxpinfo_struct</a></code>, where it works to declare the type of the struct
-member <code>type</code>.</p>
+member <code>type</code>. To access the type of a <code><a href='SEXPREC.html'>SEXPREC</a></code> you can use
+<code><a href='TYPEOF.html'>TYPEOF</a></code>.</p>
     </div>
 
 
@@ -149,15 +151,52 @@ member <code>type</code>.</p>
     <h2 class="hasAnchor" id="declaration"><a class="anchor" href="#declaration"></a>Declaration</h2>
 
     
-<pre></pre>
+<pre>typedef unsigned int SEXPTYPE;
+</pre>
 
 <p>In <a href='https://github.com/wch/r-source/blob/trunk/src/include/Rinternals.h'>Rinternals.h</a>.</p>
+    <h2 class="hasAnchor" id="sexptypes-and-r-objects"><a class="anchor" href="#sexptypes-and-r-objects"></a>SEXPTYPEs and <span style="R">R</span> objects</h2>
+
+    
+<table class='table'>
+<tr><td><code>SEXPTYPE</code> (int)</td><td><span style="R">R</span> object</td></tr>
+<tr><td><code><a href='NILSXP.html'>NILSXP</a></code> (0)</td><td>The null object in <span style="R">R</span>, see <code><a href='https://rdrr.io/r/base/NULL.html'>NULL</a></code>.</td></tr>
+<tr><td><code><a href='SYMSXP.html'>SYMSXP</a></code> (1)</td><td>Names and symbols, see <code><a href='https://rdrr.io/r/base/name.html'>name</a></code>.</td></tr>
+<tr><td><code><a href='LISTSXP.html'>LISTSXP</a></code> (2)</td><td>Lists of dotted pairs, see <code><a href='https://rdrr.io/r/base/list.html'>pairlist</a></code>.</td></tr>
+<tr><td><code><a href='CLOSXP.html'>CLOSXP</a></code> (3)</td><td>Functions, see <code><a href='https://rdrr.io/r/base/function.html'>closure</a></code>.</td></tr>
+<tr><td><code><a href='ENVSXP.html'>ENVSXP</a></code> (4)</td><td>Environments, see <code><a href='https://rdrr.io/r/base/environment.html'>environment</a></code>.</td></tr>
+<tr><td><code><a href='PROMSXP.html'>PROMSXP</a></code> (5)</td><td>Promises, see <code><a href='https://rdrr.io/r/base/delayedAssign.html'>promise</a></code>.</td></tr>
+<tr><td><code><a href='LANGSXP.html'>LANGSXP</a></code> (6)</td><td>Language objects are calls (including formulae), see <code><a href='https://rdrr.io/r/base/call.html'>call</a></code> and <code><a href='https://rdrr.io/r/stats/formula.html'>formula</a></code>.</td></tr>
+<tr><td><code><a href='SPECIALSXP.html'>SPECIALSXP</a></code> (7)</td><td>Special forms.</td></tr>
+<tr><td><code><a href='BUILTINSXP.html'>BUILTINSXP</a></code> (8)</td><td>Builtin non-special forms.</td></tr>
+<tr><td><code><a href='CHARSXP.html'>CHARSXP</a></code> (9)</td><td>"scalar" string type (internal only).</td></tr>
+<tr><td><code><a href='LGLSXP.html'>LGLSXP</a></code> (10)</td><td>Logical vectors, see <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code>.</td></tr>
+<tr><td><code><a href='INTSXP.html'>INTSXP</a></code> (13)</td><td>Integer vectors, see <code><a href='https://rdrr.io/r/base/integer.html'>integer</a></code>.</td></tr>
+<tr><td><code><a href='REALSXP.html'>REALSXP</a></code> (14)</td><td>Double vectors, see <code><a href='https://rdrr.io/r/base/double.html'>double</a></code>.</td></tr>
+<tr><td><code><a href='CPLXSXP.html'>CPLXSXP</a></code> (15)</td><td>Complex vectors, see <code><a href='https://rdrr.io/r/base/complex.html'>complex</a></code>.</td></tr>
+<tr><td><code><a href='STRSXP.html'>STRSXP</a></code> (16)</td><td>Character vectors, see <code><a href='https://rdrr.io/r/base/character.html'>character</a></code>.</td></tr>
+<tr><td><code><a href='DOTSXP.html'>DOTSXP</a></code> (17)</td><td>Dot-dot-dot object, <a href='https://rdrr.io/r/base/dots.html'>dots</a>.</td></tr>
+<tr><td><code><a href='ANYSXP.html'>ANYSXP</a></code> (18)</td><td>Make "any" args work.</td></tr>
+<tr><td><code><a href='VECSXP.html'>VECSXP</a></code> (19)</td><td>Generic vectors, i.e. lists, see <code><a href='https://rdrr.io/r/base/list.html'>list</a></code>.</td></tr>
+<tr><td><code><a href='EXPRSXP.html'>EXPRSXP</a></code> (20)</td><td>Expressions vectors, see <code><a href='https://rdrr.io/r/base/expression.html'>expression</a></code>.</td></tr>
+<tr><td><code><a href='BCODESXP.html'>BCODESXP</a></code> (21)</td><td>Byte code.</td></tr>
+<tr><td><code><a href='EXTPTRSXP.html'>EXTPTRSXP</a></code> (22)</td><td>External pointer.</td></tr>
+<tr><td><code><a href='WEAKREFSXP.html'>WEAKREFSXP</a></code> (23)</td><td>Weak reference</td></tr>
+<tr><td><code><a href='RAWSXP.html'>RAWSXP</a></code> (24)</td><td>Raw bytes, see <code><a href='https://rdrr.io/r/base/raw.html'>raw</a></code>.</td></tr>
+<tr><td><code><a href='S4SXP.html'>S4SXP</a></code> (25)</td><td>S4, non-vector, see S4 <code><a href='https://rdrr.io/r/methods/Introduction.html'>Introduction</a></code>.</td></tr>
+<tr><td><code><a href='NEWSXP.html'>NEWSXP</a></code> (30)</td><td>Fresh node created in new page.</td></tr>
+<tr><td><code><a href='FREESXP.html'>FREESXP</a></code> (31)</td><td>Node released by GC.</td></tr>
+<tr><td><code><a href='FUNSXP.html'>FUNSXP</a></code> (99)</td><td>Pseudo-type lumping closure, builtin and special.</td></tr>
+</table>
+
+
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p><a href='https://cran.r-project.org/doc/manuals/r-patched/R-ints.html#SEXPTYPEs'>https://cran.r-project.org/doc/manuals/r-patched/R-ints.html#SEXPTYPEs</a></p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><a href='sxpinfo_struct.html'>sxpinfo_struct</a>,
+    <div class='dont-index'><p><a href='TYPEOF.html'>TYPEOF</a>,
+<a href='sxpinfo_struct.html'>sxpinfo_struct</a>,
 <a href='SEXP.html'>SEXP</a>,
 <a href='SEXPREC.html'>SEXPREC</a></p></div>
 

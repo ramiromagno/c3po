@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>The type of R's NULL — NILSXP • c3po</title>
+<title>The type of external pointers — EXTPTRSXP • c3po</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,11 +48,10 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="The type of R's NULL — NILSXP" />
+<meta property="og:title" content="The type of external pointers — EXTPTRSXP" />
 <meta property="og:description" content="
-NILSXP is an object-like macro defining the SEXPTYPE
-type of a SEXPREC object pointed by R_NilValue
-(the R level NULL object)." />
+EXTPTRSXP is an object-like macro defining the SEXPTYPE
+type of external pointer objects." />
 <meta property="og:image" content="https://rmagno.eu/c3po/logo.svg" />
 
 
@@ -128,16 +127,15 @@ type of a SEXPREC object pointed by R_NilValue
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>The type of R's NULL</h1>
+    <h1>The type of external pointers</h1>
     
-    <div class="hidden name"><code>NILSXP.Rd</code></div>
+    <div class="hidden name"><code>EXTPTRSXP.Rd</code></div>
     </div>
 
     <div class="ref-description">
     <p><a href='https://rmagno.eu/c3po/articles/entities.html'><img src='figures/mobj.svg' alt='Macro object-like'></a></p>
-<p><code>NILSXP</code> is an object-like macro defining the <code><a href='SEXPTYPE.html'>SEXPTYPE</a></code>
-type of a <code><a href='SEXPREC.html'>SEXPREC</a></code> object pointed by <code><a href='R_NilValue.html'>R_NilValue</a></code>
-(the R level <code><a href='https://rdrr.io/r/base/NULL.html'>NULL</a></code> object).</p>
+<p><code>EXTPTRSXP</code> is an object-like macro defining the <code><a href='SEXPTYPE.html'>SEXPTYPE</a></code>
+type of external pointer objects.</p>
     </div>
 
 
@@ -145,7 +143,7 @@ type of a <code><a href='SEXPREC.html'>SEXPREC</a></code> object pointed by <cod
     <h2 class="hasAnchor" id="declaration"><a class="anchor" href="#declaration"></a>Declaration</h2>
 
     
-<pre>#define NILSXP 0 /* nil = NULL */
+<pre>#define EXTPTRSXP 22 /* external pointer */
 </pre>
 
 <p>In <a href='https://github.com/wch/r-source/blob/trunk/src/include/Rinternals.h'>Rinternals.h</a>.</p>
@@ -155,7 +153,6 @@ type of a <code><a href='SEXPREC.html'>SEXPREC</a></code> object pointed by <cod
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><a href='SEXPTYPE.html'>SEXPTYPE</a>,
-<a href='R_NilValue.html'>R_NilValue</a>,
 <a href='TYPEOF.html'>TYPEOF</a></p></div>
 
   </div>

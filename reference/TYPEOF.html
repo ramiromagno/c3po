@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>TYPEOF — TYPEOF • c3po</title>
+<title>The type of an R object — TYPEOF • c3po</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,9 +48,9 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="TYPEOF — TYPEOF" />
+<meta property="og:title" content="The type of an R object — TYPEOF" />
 <meta property="og:description" content="
-TYPEOF is a macro, function-like, that determines the type of an
+TYPEOF is a function-like macro that determines the type of an
 SEXPREC object." />
 <meta property="og:image" content="https://rmagno.eu/c3po/logo.svg" />
 
@@ -127,15 +127,15 @@ SEXPREC object." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>TYPEOF</h1>
+    <h1>The type of an R object</h1>
     
     <div class="hidden name"><code>TYPEOF.Rd</code></div>
     </div>
 
     <div class="ref-description">
     <p><a href='https://rmagno.eu/c3po/articles/entities.html'><img src='figures/mfn.svg' alt='Macro function-like'></a></p>
-<p><code>TYPEOF</code> is a macro, function-like, that determines the type of an
-<a href='SEXPREC.html'>SEXPREC</a> object.</p>
+<p><code>TYPEOF</code> is a function-like macro that determines the type of an
+<code><a href='SEXPREC.html'>SEXPREC</a></code> object.</p>
     </div>
 
 
@@ -144,19 +144,20 @@ SEXPREC object." />
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>an <a href='SEXP.html'>SEXP</a> pointer.</p></td>
+      <td><p>an <code><a href='SEXP.html'>SEXP</a></code> pointer.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>An <a href='SEXPTYPE.html'>SEXPTYPE</a> value (unsigned int).</p>
+    <p>A <code><a href='SEXPTYPE.html'>SEXPTYPE</a></code> value.</p>
     <h2 class="hasAnchor" id="declaration"><a class="anchor" href="#declaration"></a>Declaration</h2>
 
     
-<pre>#define TYPEOF(x) ((x)-&amp;gt;sxpinfo.type)
-</pre>
 
+<p><code>
+#define TYPEOF(x) ((x)-&gt;sxpinfo.type)
+</code></p>
 <p>In <a href='https://github.com/wch/r-source/blob/trunk/src/include/Rinternals.h'>Rinternals.h</a>.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
@@ -185,8 +186,8 @@ SEXPREC object." />
 <span class='co'># promises, returns 5</span>
 <span class='co'># But how to get one?</span>
 
-<span class='co'># language, returns 6</span>
-<span class='fu'>sexptype</span>(<span class='fu'><a href='https://rdrr.io/r/base/call.html'>call</a></span>(<span class='st'>"sin"</span>, <span class='no'>pi</span>))</div><div class='output co'>#&gt; [1] 6</div><div class='input'>
+<span class='co'># language (call and formulae), returns 6</span>
+<span class='fu'>sexptype</span>(<span class='fu'><a href='https://rdrr.io/r/base/call.html'>call</a></span>(<span class='st'>"sin"</span>, <span class='no'>pi</span>))</div><div class='output co'>#&gt; [1] 6</div><div class='input'><span class='fu'>sexptype</span>(~ <span class='no'>x</span> + <span class='fl'>2</span>)</div><div class='output co'>#&gt; [1] 6</div><div class='input'>
 <span class='co'># special forms, returns 7</span>
 <span class='fu'>sexptype</span>(<span class='no'>.Internal</span>)</div><div class='output co'>#&gt; [1] 7</div><div class='input'>
 <span class='co'># builtin non-special forms, returns 8</span>
@@ -195,8 +196,7 @@ SEXPREC object." />
 <span class='co'># No way of getting hold of one of this in R land</span>
 
 <span class='co'># logical vectors, returns 10</span>
-<span class='co'># sexptype(TRUE)</span>
-
+<span class='fu'>sexptype</span>(<span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] 10</div><div class='input'><span class='fu'>sexptype</span>(<span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] 10</div><div class='input'><span class='fu'>sexptype</span>(<span class='fl'>NA</span>)</div><div class='output co'>#&gt; [1] 10</div><div class='input'>
 <span class='co'># codes 12 and 13 are no longer in use</span>
 <span class='co'># used to be for factors and ordered factors in the 1990s</span>
 

@@ -4,10 +4,76 @@
     <loc>https://rmagno.eu/c3po/index.html</loc>
   </url>
   <url>
+    <loc>https://rmagno.eu/c3po/reference/ANYSXP.html</loc>
+  </url>
+  <url>
+    <loc>https://rmagno.eu/c3po/reference/BCODESXP.html</loc>
+  </url>
+  <url>
+    <loc>https://rmagno.eu/c3po/reference/BUILTINSXP.html</loc>
+  </url>
+  <url>
+    <loc>https://rmagno.eu/c3po/reference/CHARACTER_VALUE.html</loc>
+  </url>
+  <url>
+    <loc>https://rmagno.eu/c3po/reference/CHARSXP.html</loc>
+  </url>
+  <url>
+    <loc>https://rmagno.eu/c3po/reference/CLOSXP.html</loc>
+  </url>
+  <url>
+    <loc>https://rmagno.eu/c3po/reference/CPLXSXP.html</loc>
+  </url>
+  <url>
+    <loc>https://rmagno.eu/c3po/reference/DOTSXP.html</loc>
+  </url>
+  <url>
+    <loc>https://rmagno.eu/c3po/reference/ENVSXP.html</loc>
+  </url>
+  <url>
+    <loc>https://rmagno.eu/c3po/reference/EXPRSXP.html</loc>
+  </url>
+  <url>
+    <loc>https://rmagno.eu/c3po/reference/EXTPTRSXP.html</loc>
+  </url>
+  <url>
+    <loc>https://rmagno.eu/c3po/reference/FREESXP.html</loc>
+  </url>
+  <url>
+    <loc>https://rmagno.eu/c3po/reference/FUNSXP.html</loc>
+  </url>
+  <url>
+    <loc>https://rmagno.eu/c3po/reference/INTSXP.html</loc>
+  </url>
+  <url>
+    <loc>https://rmagno.eu/c3po/reference/LANGSXP.html</loc>
+  </url>
+  <url>
+    <loc>https://rmagno.eu/c3po/reference/LGLSXP.html</loc>
+  </url>
+  <url>
+    <loc>https://rmagno.eu/c3po/reference/LISTSXP.html</loc>
+  </url>
+  <url>
     <loc>https://rmagno.eu/c3po/reference/NA_LOGICAL.html</loc>
   </url>
   <url>
+    <loc>https://rmagno.eu/c3po/reference/NEWSXP.html</loc>
+  </url>
+  <url>
     <loc>https://rmagno.eu/c3po/reference/NILSXP.html</loc>
+  </url>
+  <url>
+    <loc>https://rmagno.eu/c3po/reference/PROMSXP.html</loc>
+  </url>
+  <url>
+    <loc>https://rmagno.eu/c3po/reference/RAWSXP.html</loc>
+  </url>
+  <url>
+    <loc>https://rmagno.eu/c3po/reference/REALSXP.html</loc>
+  </url>
+  <url>
+    <loc>https://rmagno.eu/c3po/reference/R_CHAR.html</loc>
   </url>
   <url>
     <loc>https://rmagno.eu/c3po/reference/R_FalseValue.html</loc>
@@ -20,6 +86,9 @@
   </url>
   <url>
     <loc>https://rmagno.eu/c3po/reference/R_TrueValue.html</loc>
+  </url>
+  <url>
+    <loc>https://rmagno.eu/c3po/reference/Rboolean.html</loc>
   </url>
   <url>
     <loc>https://rmagno.eu/c3po/reference/Rbyte.html</loc>
@@ -43,10 +112,25 @@
     <loc>https://rmagno.eu/c3po/reference/Rf_ScalarReal.html</loc>
   </url>
   <url>
+    <loc>https://rmagno.eu/c3po/reference/Rf_asChar.html</loc>
+  </url>
+  <url>
+    <loc>https://rmagno.eu/c3po/reference/Rf_asInteger.html</loc>
+  </url>
+  <url>
+    <loc>https://rmagno.eu/c3po/reference/Rf_asLogical.html</loc>
+  </url>
+  <url>
+    <loc>https://rmagno.eu/c3po/reference/Rf_asReal.html</loc>
+  </url>
+  <url>
     <loc>https://rmagno.eu/c3po/reference/Rf_mkCharLenCE.html</loc>
   </url>
   <url>
     <loc>https://rmagno.eu/c3po/reference/Rinternals.h.html</loc>
+  </url>
+  <url>
+    <loc>https://rmagno.eu/c3po/reference/S4SXP.html</loc>
   </url>
   <url>
     <loc>https://rmagno.eu/c3po/reference/SEXP.html</loc>
@@ -61,7 +145,22 @@
     <loc>https://rmagno.eu/c3po/reference/SEXPTYPE.html</loc>
   </url>
   <url>
+    <loc>https://rmagno.eu/c3po/reference/SPECIALSXP.html</loc>
+  </url>
+  <url>
+    <loc>https://rmagno.eu/c3po/reference/STRSXP.html</loc>
+  </url>
+  <url>
+    <loc>https://rmagno.eu/c3po/reference/SYMSXP.html</loc>
+  </url>
+  <url>
     <loc>https://rmagno.eu/c3po/reference/TYPEOF.html</loc>
+  </url>
+  <url>
+    <loc>https://rmagno.eu/c3po/reference/VECSXP.html</loc>
+  </url>
+  <url>
+    <loc>https://rmagno.eu/c3po/reference/WEAKREFSXP.html</loc>
   </url>
   <url>
     <loc>https://rmagno.eu/c3po/reference/c3po-package.html</loc>

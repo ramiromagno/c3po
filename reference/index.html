@@ -138,6 +138,255 @@
     <tbody>
       <tr>
         <th colspan="2">
+          <h2 id="section-the-r-object" class="hasAnchor"><a href="#section-the-r-object" class="anchor"></a>The R object</h2>
+          <p class="section-desc"><p>C representation of the R object</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="SEXP.html">SEXP</a></code> </p>
+        </td>
+        <td><p>Pointer to SEXPREC</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="SEXPREC.html">SEXPREC</a></code> </p>
+        </td>
+        <td><p>R's fundamental data type at C level</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="SEXPTYPE.html">SEXPTYPE</a></code> </p>
+        </td>
+        <td><p>Data type for coding of R data subtypes</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="SEXPREC_HEADER.html">SEXPREC_HEADER</a></code> </p>
+        </td>
+        <td><p>SEXPREC_HEADER</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sxpinfo_struct.html">sxpinfo_struct</a></code> </p>
+        </td>
+        <td><p>struct sxpinfo_struct</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-types-of-r-objects" class="hasAnchor"><a href="#section-types-of-r-objects" class="anchor"></a>Types of R objects</h2>
+          <p class="section-desc"><p>Macros defining the internal types (SEXPTYPE) of R objects</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="NILSXP.html">NILSXP</a></code> </p>
+        </td>
+        <td><p>The type of R's NULL</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="SYMSXP.html">SYMSXP</a></code> </p>
+        </td>
+        <td><p>The type of name and symbol objects</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="LISTSXP.html">LISTSXP</a></code> </p>
+        </td>
+        <td><p>The type of pairlist objects</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="CLOSXP.html">CLOSXP</a></code> </p>
+        </td>
+        <td><p>The type of function objects</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="ENVSXP.html">ENVSXP</a></code> </p>
+        </td>
+        <td><p>The type of environment objects</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="PROMSXP.html">PROMSXP</a></code> </p>
+        </td>
+        <td><p>The type of promise objects</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="LANGSXP.html">LANGSXP</a></code> </p>
+        </td>
+        <td><p>The type of language constructs</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="SPECIALSXP.html">SPECIALSXP</a></code> </p>
+        </td>
+        <td><p>The type of special forms</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="BUILTINSXP.html">BUILTINSXP</a></code> </p>
+        </td>
+        <td><p>The type of builtin non-special forms</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="CHARSXP.html">CHARSXP</a></code> </p>
+        </td>
+        <td><p>The type of scalar strings (internal only)</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="LGLSXP.html">LGLSXP</a></code> </p>
+        </td>
+        <td><p>The type of logical vectors</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="INTSXP.html">INTSXP</a></code> </p>
+        </td>
+        <td><p>The type of integer vectors</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="REALSXP.html">REALSXP</a></code> </p>
+        </td>
+        <td><p>The type of double vectors</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="CPLXSXP.html">CPLXSXP</a></code> </p>
+        </td>
+        <td><p>The type of complex vectors</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="STRSXP.html">STRSXP</a></code> </p>
+        </td>
+        <td><p>The type of character vectors</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="DOTSXP.html">DOTSXP</a></code> </p>
+        </td>
+        <td><p>The type of <code>...</code> object</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="ANYSXP.html">ANYSXP</a></code> </p>
+        </td>
+        <td><p>The type of the "any" object</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="VECSXP.html">VECSXP</a></code> </p>
+        </td>
+        <td><p>The type of generic vectors (lists)</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="EXPRSXP.html">EXPRSXP</a></code> </p>
+        </td>
+        <td><p>The type of expression objects</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="BCODESXP.html">BCODESXP</a></code> </p>
+        </td>
+        <td><p>The type of byte code objects</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="EXTPTRSXP.html">EXTPTRSXP</a></code> </p>
+        </td>
+        <td><p>The type of external pointers</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="WEAKREFSXP.html">WEAKREFSXP</a></code> </p>
+        </td>
+        <td><p>The type of weak references</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="RAWSXP.html">RAWSXP</a></code> </p>
+        </td>
+        <td><p>The type of raw vectors</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="S4SXP.html">S4SXP</a></code> </p>
+        </td>
+        <td><p>The type of S4, non-vector objects</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="NEWSXP.html">NEWSXP</a></code> </p>
+        </td>
+        <td><p>The type of fresh node created in new page</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="FREESXP.html">FREESXP</a></code> </p>
+        </td>
+        <td><p>The type of R's node released by GC</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="FUNSXP.html">FUNSXP</a></code> </p>
+        </td>
+        <td><p>The pseudo-type lumping closure, builtin and special</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-basic-types" class="hasAnchor"><a href="#section-basic-types" class="anchor"></a>Basic types</h2>
+          <p class="section-desc"><p>C basic types</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="Rboolean.html">Rboolean</a></code> </p>
+        </td>
+        <td><p>R's boolean type</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="Rcomplex.html">Rcomplex</a></code> </p>
+        </td>
+        <td><p>Rcomplex</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="Rbyte.html">Rbyte</a></code> </p>
+        </td>
+        <td><p>Rbyte</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
           <h2 id="section-macros" class="hasAnchor"><a href="#section-macros" class="anchor"></a>Macros</h2>
           <p class="section-desc"></p>
         </th>
@@ -152,68 +401,13 @@
         <td>
           <p><code><a href="TYPEOF.html">TYPEOF</a></code> </p>
         </td>
-        <td><p>TYPEOF</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="NILSXP.html">NILSXP</a></code> </p>
-        </td>
-        <td><p>NILSXP</p></td>
+        <td><p>The type of an R object</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="NA_LOGICAL.html">NA_LOGICAL</a></code> </p>
         </td>
         <td><p>NA_LOGICAL</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-types" class="hasAnchor"><a href="#section-types" class="anchor"></a>Types</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="SEXP.html">SEXP</a></code> </p>
-        </td>
-        <td><p>SEXP</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="SEXPTYPE.html">SEXPTYPE</a></code> </p>
-        </td>
-        <td><p>SEXPTYPE</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="SEXPREC_HEADER.html">SEXPREC_HEADER</a></code> </p>
-        </td>
-        <td><p>SEXPREC_HEADER</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="SEXPREC.html">SEXPREC</a></code> </p>
-        </td>
-        <td><p>SEXPREC</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="sxpinfo_struct.html">sxpinfo_struct</a></code> </p>
-        </td>
-        <td><p>struct sxpinfo_struct</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="Rbyte.html">Rbyte</a></code> </p>
-        </td>
-        <td><p>Rbyte</p></td>
       </tr>
     </tbody><tbody>
       <tr>
@@ -251,17 +445,11 @@
           <p><code><a href="R_TrueValue.html">R_TrueValue</a></code> </p>
         </td>
         <td><p>R_TrueValue</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="Rcomplex.html">Rcomplex</a></code> </p>
-        </td>
-        <td><p>Rcomplex</p></td>
       </tr>
     </tbody><tbody>
       <tr>
         <th colspan="2">
-          <h2 id="section-functions" class="hasAnchor"><a href="#section-functions" class="anchor"></a>Functions</h2>
+          <h2 id="section-scalar-conversions-from-c-to-r" class="hasAnchor"><a href="#section-scalar-conversions-from-c-to-r" class="anchor"></a>Scalar conversions from C to R</h2>
           <p class="section-desc"></p>
         </th>
       </tr>
@@ -306,6 +494,93 @@
           <p><code><a href="Rf_mkCharLenCE.html">Rf_mkCharLenCE</a></code> </p>
         </td>
         <td><p>Rf_mkCharLenCE</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-scalar-conversions-from-r-to-c" class="hasAnchor"><a href="#section-scalar-conversions-from-r-to-c" class="anchor"></a>Scalar conversions from R to C</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="Rf_asLogical.html">Rf_asLogical</a></code> </p>
+        </td>
+        <td><p>Convert an R scalar logical vector to a C int</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="Rf_asInteger.html">Rf_asInteger</a></code> </p>
+        </td>
+        <td><p>Convert an R scalar integer vector to a C int</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="Rf_asReal.html">Rf_asReal</a></code> </p>
+        </td>
+        <td><p>Convert an R scalar double vector to a C double</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="CHARACTER_VALUE.html">CHARACTER_VALUE</a></code> </p>
+        </td>
+        <td><p>Convert a scalar R object to a C string</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-coercion" class="hasAnchor"><a href="#section-coercion" class="anchor"></a>Coercion</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="Rf_asChar.html">Rf_asChar</a></code> </p>
+        </td>
+        <td><p>Coerce an R object to a scalar string (CHARSXP)</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-character-and-strings" class="hasAnchor"><a href="#section-character-and-strings" class="anchor"></a>Character and Strings</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="Rf_asChar.html">Rf_asChar</a></code> </p>
+        </td>
+        <td><p>Coerce an R object to a scalar string (CHARSXP)</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="R_CHAR.html">R_CHAR</a></code> </p>
+        </td>
+        <td><p>Convert a string scalar (CHARSXP) to a C-string (char *)</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="CHARACTER_VALUE.html">CHARACTER_VALUE</a></code> </p>
+        </td>
+        <td><p>Convert a scalar R object to a C string</p></td>
       </tr>
     </tbody><tbody>
       <tr>

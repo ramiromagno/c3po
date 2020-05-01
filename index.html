@@ -85,25 +85,55 @@
 </h1></div>
 <!-- badges: start -->
 
-<p>c3po is a documentation-only package for the journey from R to C and back again.</p>
+<p>c3po is a documentation-only package for the journey from R to C and back again. Please note this is still a very much work in progress.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <div class="sourceCode" id="cb1"><pre class="r"><span class="co"># install.packages("remotes")</span>
 <span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"ramiromagno/c3po"</span>)</pre></div>
 </div>
-<div id="example" class="section level2">
+<div id="usage" class="section level2">
 <h2 class="hasAnchor">
-<a href="#example" class="anchor"></a>Example</h2>
-<p>To access the help page about the C function <code>Rf_ScalarReal</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">c3po</span>)
-?<span class="no">Rf_ScalarReal</span></pre></div>
+<a href="#usage" class="anchor"></a>Usage</h2>
 <p>Browse the online documentation: <a href="https://rmagno.eu/c3po" class="uri">https://rmagno.eu/c3po</a>.</p>
 </div>
 <div id="help" class="section level2">
 <h2 class="hasAnchor">
 <a href="#help" class="anchor"></a>Help</h2>
 <p>Help is emphatically appreciated! This package is at its infancy still, so if you feel like you can help documenting R’s C API, please do. I will be glad to accept pull requests.</p>
+</div>
+<div id="references" class="section level2">
+<h2 class="hasAnchor">
+<a href="#references" class="anchor"></a>References</h2>
+<p>These are the sources I have been using to write this documentation.</p>
+<ul>
+<li>R’s source code: <a href="https://github.com/wch/r-source/" class="uri">https://github.com/wch/r-source/</a>
+</li>
+<li>Writing R Extensions: <a href="https://cran.r-project.org/doc/manuals/r-release/R-exts.html" class="uri">https://cran.r-project.org/doc/manuals/r-release/R-exts.html</a>
+</li>
+<li>R Internals: <a href="https://cran.r-project.org/doc/manuals/r-release/R-ints.html" class="uri">https://cran.r-project.org/doc/manuals/r-release/R-ints.html</a>
+</li>
+<li>Hadley’s Advanced R 1st edition: <a href="http://adv-r.had.co.nz/C-interface.html" class="uri">http://adv-r.had.co.nz/C-interface.html</a>
+</li>
+<li>Hadley’s R packages: <a href="https://r-pkgs.org/src.html#clang" class="uri">https://r-pkgs.org/src.html#clang</a>
+</li>
+<li>Hadley’s notes on R internals: <a href="https://github.com/hadley/r-internals" class="uri">https://github.com/hadley/r-internals</a>
+</li>
+<li>Lukas Stadler’s documentation for the R native API header files: <a href="https://lukasstadler.github.io/RAPI/html/index.html" class="uri">https://lukasstadler.github.io/RAPI/html/index.html</a>
+</li>
+<li>Native API stats of Rinternals.h without USE R INTERNALS: <a href="https://wiki.r-consortium.org/view/Native_API_stats_of_Rinternals.h_without_USE_R_INTERNALS" class="uri">https://wiki.r-consortium.org/view/Native_API_stats_of_Rinternals.h_without_USE_R_INTERNALS</a>
+</li>
+<li>The GNU C Reference Manual: <a href="https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html" class="uri">https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html</a>
+</li>
+<li>Tomas Kalibera: Common PROTECT Errors: <a href="https://developer.r-project.org/Blog/public/2019/04/18/common-protect-errors/" class="uri">https://developer.r-project.org/Blog/public/2019/04/18/common-protect-errors/</a>
+</li>
+<li>The danger of PROTECT errors: <a href="https://github.com/kalibera/cran-checks/blob/master/rchk/PROTECT.md" class="uri">https://github.com/kalibera/cran-checks/blob/master/rchk/PROTECT.md</a>
+</li>
+<li>C source code of the rlang package: <a href="https://github.com/tidyverse/rlang" class="uri">https://github.com/tidyverse/rlang</a>
+</li>
+<li>Using R — Packaging a C library in 15 minutes: <a href="http://mazamascience.com/WorkingWithData/?p=1151" class="uri">http://mazamascience.com/WorkingWithData/?p=1151</a>
+</li>
+</ul>
 </div>
 </div>
   </div>
