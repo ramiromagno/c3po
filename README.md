@@ -7,7 +7,7 @@
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![Travis build
-status](https://travis-ci.com/ramiromagno/c3po.svg?branch=master)](https://travis-ci.com/ramiromagno/c3po)
+status](https://travis-ci.org/ramiromagno/c3po.svg?branch=master)](https://travis-ci.org/ramiromagno/c3po)
 <!-- badges: end -->
 
 c3po is a documentation-only package for the journey from R to C and
@@ -54,7 +54,7 @@ These are the sources I have been using to write this documentation.
     <https://developer.r-project.org/Blog/public/2019/04/18/common-protect-errors/>
   - The danger of PROTECT errors:
     <https://github.com/kalibera/cran-checks/blob/master/rchk/PROTECT.md>
-  - C source code of the rlang package:
+  - C source code from the rlang package:
     <https://github.com/tidyverse/rlang>
   - Using R — Packaging a C library in 15 minutes:
     <http://mazamascience.com/WorkingWithData/?p=1151>
