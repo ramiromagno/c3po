@@ -170,7 +170,7 @@ it should not be returned back to R.</p>
     
 <pre>SEXP asChar(SEXP x)
 {
-  if (isVectorAtomic(x) &amp;amp;&amp;amp; XLENGTH(x) &amp;gt;= 1) {
+  if (isVectorAtomic(x) &amp;&amp; XLENGTH(x) &gt;= 1) {
     int w, d, e, wi, di, ei;
     char buf[MAXELTSIZE];  /* Probably 100 would suffice */
 
@@ -190,11 +190,11 @@ it should not be returned back to R.</p>
         return mkChar(buf);
         case REALSXP:
           PrintDefaults();
-        formatReal(REAL(x), 1, &amp;amp;w, &amp;amp;d, &amp;amp;e, 0);
+        formatReal(REAL(x), 1, &amp;w, &amp;d, &amp;e, 0);
         return mkChar(EncodeReal0(REAL(x)[0], w, d, e, OutDec));
         case CPLXSXP:
           PrintDefaults();
-        formatComplex(COMPLEX(x), 1, &amp;amp;w, &amp;amp;d, &amp;amp;e, &amp;amp;wi, &amp;amp;di, &amp;amp;ei, 0);
+        formatComplex(COMPLEX(x), 1, &amp;w, &amp;d, &amp;e, &amp;wi, &amp;di, &amp;ei, 0);
         return mkChar(EncodeComplex(COMPLEX(x)[0], w, d, e, wi, di, ei, OutDec));
         case STRSXP:
           return STRING_ELT(x, 0);
@@ -259,7 +259,7 @@ it should not be returned back to R.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
 
       </footer>

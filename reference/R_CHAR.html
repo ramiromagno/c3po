@@ -164,7 +164,7 @@ Convert a string scalar (CHARSXP) to a C-string (char
 
     
 <pre>const char *(R_CHAR)(SEXP x) {
-  if(TYPEOF(x) != CHARSXP) // Han-Tak proposes to prepend  'x &amp;amp;&amp;amp; '
+  if(TYPEOF(x) != CHARSXP) // Han-Tak proposes to prepend  'x &amp;&amp; '
   error("%s() can only be applied to a '%s', not a '%s'",
         "CHAR", "CHARSXP", type2char(TYPEOF(x)));
   return (const char *) CHAR(CHK(x));
@@ -191,7 +191,7 @@ Convert a string scalar (CHARSXP) to a C-string (char
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
 
       </footer>

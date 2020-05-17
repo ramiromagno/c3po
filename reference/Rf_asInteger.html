@@ -168,29 +168,29 @@ Converts a scalar (length one) integer vector
 {
   int warn = 0, res;
 
-  if (isVectorAtomic(x) &amp;amp;&amp;amp; XLENGTH(x) &amp;gt;= 1) {
+  if (isVectorAtomic(x) &amp;&amp; XLENGTH(x) &gt;= 1) {
     switch (TYPEOF(x)) {
     case LGLSXP:
-        return IntegerFromLogical(LOGICAL_ELT(x, 0), &amp;amp;warn);
+        return IntegerFromLogical(LOGICAL_ELT(x, 0), &amp;warn);
     case INTSXP:
         return INTEGER_ELT(x, 0);
     case REALSXP:
-        res = IntegerFromReal(REAL_ELT(x, 0), &amp;amp;warn);
+        res = IntegerFromReal(REAL_ELT(x, 0), &amp;warn);
         CoercionWarning(warn);
         return res;
     case CPLXSXP:
-        res = IntegerFromComplex(COMPLEX_ELT(x, 0), &amp;amp;warn);
+        res = IntegerFromComplex(COMPLEX_ELT(x, 0), &amp;warn);
         CoercionWarning(warn);
         return res;
     case STRSXP:
-        res = IntegerFromString(STRING_ELT(x, 0), &amp;amp;warn);
+        res = IntegerFromString(STRING_ELT(x, 0), &amp;warn);
         CoercionWarning(warn);
         return res;
     default:
          UNIMPLEMENTED_TYPE("asInteger", x);
       }
   } else if(TYPEOF(x) == CHARSXP) {
-      res = IntegerFromString(x, &amp;amp;warn);
+      res = IntegerFromString(x, &amp;warn);
       CoercionWarning(warn);
       return res;
   }
@@ -234,7 +234,7 @@ Converts a scalar (length one) integer vector
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
 
       </footer>

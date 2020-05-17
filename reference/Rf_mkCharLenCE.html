@@ -189,8 +189,8 @@ TODO" />
     default:
       error(_("unknown encoding: %d"), enc);
   }
-  for (int slen = 0; slen &amp;lt; len; slen++) {
-    if ((unsigned int) name[slen] &amp;gt; 127) is_ascii = FALSE;
+  for (int slen = 0; slen &lt; len; slen++) {
+    if ((unsigned int) name[slen] &gt; 127) is_ascii = FALSE;
     if (!name[slen]) embedNul = TRUE;
   }
   if (embedNul) {
@@ -211,7 +211,7 @@ TODO" />
            EncodeString(c, 0, 0, Rprt_adj_none));
   }
 
-  if (enc &amp;amp;&amp;amp; is_ascii) enc = CE_NATIVE;
+  if (enc &amp;&amp; is_ascii) enc = CE_NATIVE;
   switch(enc) {
     case CE_UTF8: need_enc = UTF8_MASK; break;
     case CE_LATIN1: need_enc = LATIN1_MASK; break;
@@ -219,7 +219,7 @@ TODO" />
     default: need_enc = 0;
   }
 
-  hashcode = char_hash(name, len) &amp;amp; char_hash_mask;
+  hashcode = char_hash(name, len) &amp; char_hash_mask;
 
   /* Search for a cached value */
     cval = R_NilValue;
@@ -227,8 +227,8 @@ TODO" />
   for (; !ISNULL(chain) ; chain = CXTAIL(chain)) {
     SEXP val = CXHEAD(chain);
     if (TYPEOF(val) != CHARSXP) break; /* sanity check */
-      if (need_enc == (ENC_KNOWN(val) | IS_BYTES(val)) &amp;amp;&amp;amp;
-          LENGTH(val) == len &amp;amp;&amp;amp;  /* quick pretest */
+      if (need_enc == (ENC_KNOWN(val) | IS_BYTES(val)) &amp;&amp;
+          LENGTH(val) == len &amp;&amp;  /* quick pretest */
           (!len || (memcmp(CHAR(val), name, len) == 0))) { // called with len = 0
           cval = val;
           break;
@@ -269,7 +269,7 @@ TODO" />
            FIXME: this has changed with long vectors.
         */
         if (R_HashSizeCheck(R_StringHash)
-            &amp;amp;&amp;amp; char_hash_size &amp;lt; 1073741824 /* 2^30 */)
+            &amp;&amp; char_hash_size &lt; 1073741824 /* 2^30 */)
             R_StringHash_resize(char_hash_size * 2);
 
         UNPROTECT(1);
@@ -299,7 +299,7 @@ TODO" />
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
 
       </footer>
