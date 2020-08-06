@@ -177,15 +177,19 @@ length one <code>raw</code> vector.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Convert a C unsigned char to an R length one raw vector</span>
-<span class='no'>asterisk_byte</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>inline</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/inline/man/cfunction.html'>cfunction</a></span>(<span class='kw'>NULL</span>,
+<span class='kw'>asterisk_byte</span> <span class='op'>&lt;-</span> <span class='kw'>inline</span>::<span class='fu'><a href='https://rdrr.io/pkg/inline/man/cfunction.html'>cfunction</a></span>(<span class='kw'>NULL</span>,
  <span class='st'>" Rbyte x = '*'; // '*' is 42 in decimal, 2a in hexadecimal.
    SEXP y;
    y = PROTECT(Rf_ScalarRaw(x));
    UNPROTECT(1);
    return y;
- "</span>)
-<span class='fu'>asterisk_byte</span>()</div><div class='output co'>#&gt; [1] 2a</div><div class='input'>
-</div></pre>
+ "</span> Rbyte x = '*'; // '*' is 42 in decimal, 2a in hexadecimal.
+   SEXP y;
+   y = PROTECT(Rf_ScalarRaw(x));
+   UNPROTECT(1);
+   return y;
+ ")
+<span class='fu'>asterisk_byte</span>()</div><div class='output co'>#&gt; [1] 2a</div><div class='input'></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

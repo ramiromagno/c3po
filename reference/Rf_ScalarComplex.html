@@ -177,7 +177,7 @@ represents an <span style="R">R</span> length one <code>complex</code> vector.</
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Convert a C complex number to an R length one complex vector</span>
-<span class='no'>scalar_complex</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>inline</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/inline/man/cfunction.html'>cfunction</a></span>(<span class='kw'>NULL</span>,
+<span class='kw'>scalar_complex</span> <span class='op'>&lt;-</span> <span class='kw'>inline</span>::<span class='fu'><a href='https://rdrr.io/pkg/inline/man/cfunction.html'>cfunction</a></span>(<span class='kw'>NULL</span>,
  <span class='st'>'double real = 1.;
   double imaginary = 2.;
   Rcomplex x;
@@ -187,9 +187,17 @@ represents an <span style="R">R</span> length one <code>complex</code> vector.</
   y = PROTECT(Rf_ScalarComplex(x));
   UNPROTECT(1);
   return y;
- '</span>)
+ '</span>double real = 1.;
+  double imaginary = 2.;
+  Rcomplex x;
+  x.r = real;
+  x.i = imaginary;
+  SEXP y;
+  y = PROTECT(Rf_ScalarComplex(x));
+  UNPROTECT(1);
+  return y;
+ ')
 <span class='fu'>scalar_complex</span>()</div><div class='output co'>#&gt; [1] 1+2i</div><div class='input'>
-
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

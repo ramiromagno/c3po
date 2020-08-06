@@ -176,12 +176,16 @@ Converts a scalar (length one) logical vector
     <pre class="examples"><div class='input'><span class='co'># Convert an R length one logical vector to a C int number</span>
 <span class='co'># Please note that the double backslash in "\n" in Rprintf is only required</span>
 <span class='co'># because of the inlining of the code here.</span>
-<span class='no'>rlogical_to_cint</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>inline</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/inline/man/cfunction.html'>cfunction</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"logical"</span>),
+<span class='kw'>rlogical_to_cint</span> <span class='op'>&lt;-</span> <span class='kw'>inline</span>::<span class='fu'><a href='https://rdrr.io/pkg/inline/man/cfunction.html'>cfunction</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(x = <span class='st'>"logical"</span>),
  <span class='st'>' int x_;
    x_ = Rf_asLogical(x);
    Rprintf("x_ is %d\\n", x_);
    return R_NilValue;
- '</span>)
+ '</span> int x_;
+   x_ = Rf_asLogical(x);
+   Rprintf("x_ is %d\\n", x_);
+   return R_NilValue;
+ ')
 <span class='co'># NA is mapped to INT_MIN</span>
 <span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>rlogical_to_cint</span>(<span class='fl'>NA</span>))</div><div class='output co'>#&gt; x_ is -2147483648</div><div class='input'>
 <span class='co'># Empty logical is also mapped to INT_MIN</span>
@@ -189,8 +193,7 @@ Converts a scalar (length one) logical vector
 <span class='co'># FALSE is internally mapped to 0</span>
 <span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>rlogical_to_cint</span>(<span class='fl'>FALSE</span>))</div><div class='output co'>#&gt; x_ is 0</div><div class='input'>
 <span class='co'># TRUE is internally mapped to 1</span>
-<span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>rlogical_to_cint</span>(<span class='fl'>TRUE</span>))</div><div class='output co'>#&gt; x_ is 1</div><div class='input'>
-</div></pre>
+<span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>rlogical_to_cint</span>(<span class='fl'>TRUE</span>))</div><div class='output co'>#&gt; x_ is 1</div><div class='input'></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

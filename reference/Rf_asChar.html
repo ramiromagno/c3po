@@ -216,34 +216,37 @@ it should not be returned back to R.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Coerces an R object to an object of type CHARSXP</span>
-<span class='no'>print_char</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>inline</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/inline/man/cfunction.html'>cfunction</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"any"</span>),
+<span class='kw'>print_char</span> <span class='op'>&lt;-</span> <span class='kw'>inline</span>::<span class='fu'><a href='https://rdrr.io/pkg/inline/man/cfunction.html'>cfunction</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(x = <span class='st'>"any"</span>),
 <span class='st'>' const char * x_;
   x_ = R_CHAR(Rf_asChar(x));
   Rprintf("%s\\n", x_);
   return R_NilValue;
-'</span>)
+'</span> const char * x_;
+  x_ = R_CHAR(Rf_asChar(x));
+  Rprintf("%s\\n", x_);
+  return R_NilValue;
+')
 
 <span class='co'># Convert from STRSXP to CHARSXP</span>
 <span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>print_char</span>(<span class='st'>"coal"</span>))</div><div class='output co'>#&gt; coal</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>print_char</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"charcoal"</span>, <span class='st'>"coal"</span>)))</div><div class='output co'>#&gt; charcoal</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>print_char</span>(<span class='fl'>NA_character_</span>))</div><div class='output co'>#&gt; NA</div><div class='input'>
 <span class='co'># Convert from LGLSXP to CHARSXP</span>
 <span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>print_char</span>(<span class='fl'>TRUE</span>))</div><div class='output co'>#&gt; TRUE</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>print_char</span>(<span class='fl'>FALSE</span>))</div><div class='output co'>#&gt; FALSE</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>print_char</span>(<span class='fl'>NA</span>))</div><div class='output co'>#&gt; NA</div><div class='input'>
 <span class='co'># Convert from INTSXP to CHARSXP</span>
-<span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>print_char</span>(-<span class='fl'>1L</span>))</div><div class='output co'>#&gt; -1</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>print_char</span>(<span class='fl'>1L</span>))</div><div class='output co'>#&gt; 1</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>print_char</span>(<span class='fl'>NA_integer_</span>))</div><div class='output co'>#&gt; NA</div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>print_char</span>(<span class='op'>-</span><span class='fl'>1L</span>))</div><div class='output co'>#&gt; -1</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>print_char</span>(<span class='fl'>1L</span>))</div><div class='output co'>#&gt; 1</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>print_char</span>(<span class='fl'>NA_integer_</span>))</div><div class='output co'>#&gt; NA</div><div class='input'>
 <span class='co'># Convert from REALSXP to CHARSXP</span>
-<span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>print_char</span>(<span class='fl'>1.0</span>))</div><div class='output co'>#&gt; 1</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>print_char</span>(-<span class='fl'>1</span>))</div><div class='output co'>#&gt; -1</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>print_char</span>(<span class='fl'>NA_real_</span>))</div><div class='output co'>#&gt; NA</div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>print_char</span>(<span class='fl'>1.0</span>))</div><div class='output co'>#&gt; 1</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>print_char</span>(<span class='op'>-</span><span class='fl'>1</span>))</div><div class='output co'>#&gt; -1</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>print_char</span>(<span class='fl'>NA_real_</span>))</div><div class='output co'>#&gt; NA</div><div class='input'>
 <span class='co'># Convert from CPLXSXP to CHARSXP</span>
-<span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>print_char</span>(<span class='fl'>2</span>+<span class='fl'>5i</span>))</div><div class='output co'>#&gt; 2+5i</div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>print_char</span>(<span class='fl'>2</span><span class='op'>+</span><span class='fl'>5i</span>))</div><div class='output co'>#&gt; 2+5i</div><div class='input'>
 <span class='co'># Convert from SYMSXP to CHARSXP</span>
 <span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>print_char</span>(<span class='fu'><a href='https://rdrr.io/r/base/name.html'>as.symbol</a></span>(<span class='st'>'a'</span>)))</div><div class='output co'>#&gt; a</div><div class='input'>
 <span class='co'># Coercion from other object types to CHARSXP</span>
 <span class='co'># results in NA:</span>
 <span class='co'># From VECSXP to CHARSXP</span>
-<span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>print_char</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='st'>'b'</span>)))</div><div class='output co'>#&gt; NA</div><div class='input'><span class='co'># From ENVSXP to CHARSXP</span>
-<span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>print_char</span>(<span class='no'>.GlobalEnv</span>))</div><div class='output co'>#&gt; NA</div><div class='input'><span class='co'># From CLOSXP to CHARSXP</span>
-<span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>print_char</span>(<span class='kw'>function</span>() {}))</div><div class='output co'>#&gt; NA</div><div class='input'><span class='co'># From EXPRSXP to CHARSXP</span>
+<span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>print_char</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(a = <span class='st'>'b'</span>)))</div><div class='output co'>#&gt; NA</div><div class='input'><span class='co'># From ENVSXP to CHARSXP</span>
+<span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>print_char</span>(<span class='kw'>.GlobalEnv</span>))</div><div class='output co'>#&gt; NA</div><div class='input'><span class='co'># From CLOSXP to CHARSXP</span>
+<span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>print_char</span>(<span class='fu'>function</span>() {}))</div><div class='output co'>#&gt; NA</div><div class='input'><span class='co'># From EXPRSXP to CHARSXP</span>
 <span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>print_char</span>(<span class='fu'><a href='https://rdrr.io/r/base/expression.html'>expression</a></span>()))</div><div class='output co'>#&gt; NA</div><div class='input'><span class='co'># From LANGSXP to CHARSXP</span>
-<span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>print_char</span>(~ <span class='fl'>2</span> + <span class='no'>x</span>))</div><div class='output co'>#&gt; NA</div><div class='input'>
-</div></pre>
+<span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>print_char</span>(<span class='op'>~</span> <span class='fl'>2</span> <span class='op'>+</span> <span class='kw'>x</span>))</div><div class='output co'>#&gt; NA</div><div class='input'></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

@@ -177,15 +177,19 @@ integer vector." />
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Convert a C int number as an R length one integer vector</span>
-<span class='no'>forty_two</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>inline</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/inline/man/cfunction.html'>cfunction</a></span>(<span class='kw'>NULL</span>,
+<span class='kw'>forty_two</span> <span class='op'>&lt;-</span> <span class='kw'>inline</span>::<span class='fu'><a href='https://rdrr.io/pkg/inline/man/cfunction.html'>cfunction</a></span>(<span class='kw'>NULL</span>,
  <span class='st'>' int x = 42;
    SEXP y;
    y = PROTECT(Rf_ScalarInteger(x));
    UNPROTECT(1);
    return y;
- '</span>)
+ '</span> int x = 42;
+   SEXP y;
+   y = PROTECT(Rf_ScalarInteger(x));
+   UNPROTECT(1);
+   return y;
+ ')
 <span class='fu'>forty_two</span>()</div><div class='output co'>#&gt; [1] 42</div><div class='input'>
-
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

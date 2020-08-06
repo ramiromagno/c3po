@@ -207,14 +207,17 @@ Converts a scalar (length one) double vector
     <pre class="examples"><div class='input'><span class='co'># Convert an R length one integer vector to a C double number</span>
 <span class='co'># Please note that the double backslash in "\n" in Rprintf is only required</span>
 <span class='co'># because of the inlining of the code here.</span>
-<span class='no'>rdouble_to_cdouble</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>inline</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/inline/man/cfunction.html'>cfunction</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"double"</span>),
+<span class='kw'>rdouble_to_cdouble</span> <span class='op'>&lt;-</span> <span class='kw'>inline</span>::<span class='fu'><a href='https://rdrr.io/pkg/inline/man/cfunction.html'>cfunction</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(x = <span class='st'>"double"</span>),
  <span class='st'>' double x_;
    x_ = Rf_asReal(x);
    Rprintf("x_ is %f\\n", x_);
    return R_NilValue;
- '</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>rdouble_to_cdouble</span>(<span class='fl'>NA_real_</span>))</div><div class='output co'>#&gt; x_ is nan</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>rdouble_to_cdouble</span>(<span class='fl'>NaN</span>))</div><div class='output co'>#&gt; x_ is nan</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>rdouble_to_cdouble</span>(-<span class='fl'>1</span>))</div><div class='output co'>#&gt; x_ is -1.000000</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>rdouble_to_cdouble</span>(<span class='fl'>0</span>))</div><div class='output co'>#&gt; x_ is 0.000000</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>rdouble_to_cdouble</span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt; x_ is 1.000000</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>rdouble_to_cdouble</span>(<span class='fl'>Inf</span>))</div><div class='output co'>#&gt; x_ is inf</div><div class='input'>
-</div></pre>
+ '</span> double x_;
+   x_ = Rf_asReal(x);
+   Rprintf("x_ is %f\\n", x_);
+   return R_NilValue;
+ ')
+<span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>rdouble_to_cdouble</span>(<span class='fl'>NA_real_</span>))</div><div class='output co'>#&gt; x_ is nan</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>rdouble_to_cdouble</span>(<span class='fl'>NaN</span>))</div><div class='output co'>#&gt; x_ is nan</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>rdouble_to_cdouble</span>(<span class='op'>-</span><span class='fl'>1</span>))</div><div class='output co'>#&gt; x_ is -1.000000</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>rdouble_to_cdouble</span>(<span class='fl'>0</span>))</div><div class='output co'>#&gt; x_ is 0.000000</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>rdouble_to_cdouble</span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt; x_ is 1.000000</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>rdouble_to_cdouble</span>(<span class='fl'>Inf</span>))</div><div class='output co'>#&gt; x_ is inf</div><div class='input'></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

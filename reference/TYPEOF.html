@@ -165,12 +165,16 @@ SEXPREC object." />
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Determine R objects' SEXPTYPEs</span>
-<span class='no'>sexptype</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>inline</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/inline/man/cfunction.html'>cfunction</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"ANY"</span>),
+<span class='kw'>sexptype</span> <span class='op'>&lt;-</span> <span class='kw'>inline</span>::<span class='fu'><a href='https://rdrr.io/pkg/inline/man/cfunction.html'>cfunction</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(x = <span class='st'>"ANY"</span>),
  <span class='st'>' SEXP type_value;
    type_value = PROTECT(Rf_ScalarInteger(TYPEOF(x)));
    UNPROTECT(1);
    return type_value;
- '</span>)
+ '</span> SEXP type_value;
+   type_value = PROTECT(Rf_ScalarInteger(TYPEOF(x)));
+   UNPROTECT(1);
+   return type_value;
+ ')
 
 <span class='co'># NULL, returns 0</span>
 <span class='fu'>sexptype</span>(<span class='kw'>NULL</span>)</div><div class='output co'>#&gt; [1] 0</div><div class='input'><span class='co'># an empty pairlist also returns 0</span>
@@ -178,18 +182,18 @@ SEXPREC object." />
 <span class='co'># symbol, returns 1</span>
 <span class='fu'>sexptype</span>(<span class='fu'><a href='https://rdrr.io/r/base/name.html'>as.symbol</a></span>(<span class='st'>'a'</span>))</div><div class='output co'>#&gt; [1] 1</div><div class='input'>
 <span class='co'># dotted pair list, returns 2</span>
-<span class='fu'>sexptype</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>pairlist</a></span>(<span class='kw'>a</span> <span class='kw'>=</span> <span class='fl'>1</span>))</div><div class='output co'>#&gt; [1] 2</div><div class='input'>
+<span class='fu'>sexptype</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>pairlist</a></span>(a = <span class='fl'>1</span>))</div><div class='output co'>#&gt; [1] 2</div><div class='input'>
 <span class='co'># closure, returns 3</span>
-<span class='fu'>sexptype</span>(<span class='kw'>function</span>(<span class='no'>x</span>) {<span class='no'>x</span> + <span class='fl'>1</span>})</div><div class='output co'>#&gt; [1] 3</div><div class='input'>
+<span class='fu'>sexptype</span>(<span class='fu'>function</span>(<span class='kw'>x</span>) {<span class='kw'>x</span> <span class='op'>+</span> <span class='fl'>1</span>})</div><div class='output co'>#&gt; [1] 3</div><div class='input'>
 <span class='co'># environment, returns 4</span>
-<span class='fu'>sexptype</span>(<span class='no'>.GlobalEnv</span>)</div><div class='output co'>#&gt; [1] 4</div><div class='input'>
+<span class='fu'>sexptype</span>(<span class='kw'>.GlobalEnv</span>)</div><div class='output co'>#&gt; [1] 4</div><div class='input'>
 <span class='co'># promises, returns 5</span>
 <span class='co'># But how to get one?</span>
 
 <span class='co'># language (call and formulae), returns 6</span>
-<span class='fu'>sexptype</span>(<span class='fu'><a href='https://rdrr.io/r/base/call.html'>call</a></span>(<span class='st'>"sin"</span>, <span class='no'>pi</span>))</div><div class='output co'>#&gt; [1] 6</div><div class='input'><span class='fu'>sexptype</span>(~ <span class='no'>x</span> + <span class='fl'>2</span>)</div><div class='output co'>#&gt; [1] 6</div><div class='input'>
+<span class='fu'>sexptype</span>(<span class='fu'><a href='https://rdrr.io/r/base/call.html'>call</a></span>(<span class='st'>"sin"</span>, <span class='kw'>pi</span>))</div><div class='output co'>#&gt; [1] 6</div><div class='input'><span class='fu'>sexptype</span>(<span class='op'>~</span> <span class='kw'>x</span> <span class='op'>+</span> <span class='fl'>2</span>)</div><div class='output co'>#&gt; [1] 6</div><div class='input'>
 <span class='co'># special forms, returns 7</span>
-<span class='fu'>sexptype</span>(<span class='no'>.Internal</span>)</div><div class='output co'>#&gt; [1] 7</div><div class='input'>
+<span class='fu'>sexptype</span>(<span class='kw'>.Internal</span>)</div><div class='output co'>#&gt; [1] 7</div><div class='input'>
 <span class='co'># builtin non-special forms, returns 8</span>
 <span class='fu'>sexptype</span>(<span class='fu'><a href='https://rdrr.io/r/base/Primitive.html'>.Primitive</a></span>(<span class='st'>"sqrt"</span>))</div><div class='output co'>#&gt; [1] 8</div><div class='input'>
 <span class='co'># "scalar" string type (internal only), would return 9</span>
@@ -203,9 +207,9 @@ SEXPREC object." />
 <span class='co'># integer vectors, returns 13</span>
 <span class='fu'>sexptype</span>(<span class='fl'>1L</span>)</div><div class='output co'>#&gt; [1] 13</div><div class='input'><span class='fu'>sexptype</span>(<span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span>(<span class='st'>'as'</span>)) <span class='co'># still an integer vector</span></div><div class='output co'>#&gt; [1] 13</div><div class='input'>
 <span class='co'># real vectors, returns 14</span>
-<span class='fu'>sexptype</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] 14</div><div class='input'><span class='fu'>sexptype</span>(<span class='no'>pi</span>)</div><div class='output co'>#&gt; [1] 14</div><div class='input'><span class='fu'>sexptype</span>(<span class='fu'><a href='https://rdrr.io/r/base/double.html'>double</a></span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt; [1] 14</div><div class='input'><span class='fu'>sexptype</span>(<span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt; [1] 14</div><div class='input'>
+<span class='fu'>sexptype</span>(<span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] 14</div><div class='input'><span class='fu'>sexptype</span>(<span class='kw'>pi</span>)</div><div class='output co'>#&gt; [1] 14</div><div class='input'><span class='fu'>sexptype</span>(<span class='fu'><a href='https://rdrr.io/r/base/double.html'>double</a></span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt; [1] 14</div><div class='input'><span class='fu'>sexptype</span>(<span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>numeric</a></span>(<span class='fl'>1</span>))</div><div class='output co'>#&gt; [1] 14</div><div class='input'>
 <span class='co'># complex vectors, returns 15</span>
-<span class='fu'>sexptype</span>(<span class='fl'>1i</span>)</div><div class='output co'>#&gt; [1] 15</div><div class='input'><span class='fu'>sexptype</span>(<span class='fl'>0i</span>)</div><div class='output co'>#&gt; [1] 15</div><div class='input'><span class='fu'>sexptype</span>(<span class='fl'>0</span> + <span class='fl'>1i</span>)</div><div class='output co'>#&gt; [1] 15</div><div class='input'><span class='fu'>sexptype</span>(<span class='fl'>NA_complex_</span>)</div><div class='output co'>#&gt; [1] 15</div><div class='input'>
+<span class='fu'>sexptype</span>(<span class='fl'>1i</span>)</div><div class='output co'>#&gt; [1] 15</div><div class='input'><span class='fu'>sexptype</span>(<span class='fl'>0i</span>)</div><div class='output co'>#&gt; [1] 15</div><div class='input'><span class='fu'>sexptype</span>(<span class='fl'>0</span> <span class='op'>+</span> <span class='fl'>1i</span>)</div><div class='output co'>#&gt; [1] 15</div><div class='input'><span class='fu'>sexptype</span>(<span class='fl'>NA_complex_</span>)</div><div class='output co'>#&gt; [1] 15</div><div class='input'>
 <span class='co'># string vectors , returns 16</span>
 <span class='fu'>sexptype</span>(<span class='st'>"alice in wonderland"</span>)</div><div class='output co'>#&gt; [1] 16</div><div class='input'>
 <span class='co'># TODO: dot-dot-dot object, returns 17</span>
@@ -215,7 +219,7 @@ SEXPREC object." />
 <span class='co'># generic vectors, i.e., lists, returns 19</span>
 <span class='fu'>sexptype</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>())</div><div class='output co'>#&gt; [1] 19</div><div class='input'>
 <span class='co'># expression, returns 20</span>
-<span class='fu'>sexptype</span>(<span class='fu'><a href='https://rdrr.io/r/base/expression.html'>expression</a></span>(<span class='no'>x</span> + <span class='fl'>2</span>))</div><div class='output co'>#&gt; [1] 20</div><div class='input'>
+<span class='fu'>sexptype</span>(<span class='fu'><a href='https://rdrr.io/r/base/expression.html'>expression</a></span>(<span class='kw'>x</span> <span class='op'>+</span> <span class='fl'>2</span>))</div><div class='output co'>#&gt; [1] 20</div><div class='input'>
 <span class='co'># TODO: byte code, returns 21</span>
 
 <span class='co'># TODO: external pointer, returns 22</span>
@@ -224,14 +228,13 @@ SEXPREC object." />
 
 <span class='co'># raw bytes, returns 24</span>
 <span class='fu'>sexptype</span>(<span class='fu'><a href='https://rdrr.io/r/base/raw.html'>raw</a></span>(<span class='fl'>2</span>))</div><div class='output co'>#&gt; [1] 24</div><div class='input'>
-# TODO: S4, non-vector, returns 25
+<span class='co'># TODO: S4, non-vector, returns 25</span>
 
-# TODO: fresh node created in new page, returns 30
+<span class='co'># TODO: fresh node created in new page, returns 30</span>
 
-# TODO: node released by GC, returns 31
+<span class='co'># TODO: node released by GC, returns 31</span>
 
-# TODO: Closure or Builtin or Special, returns 99
-
+<span class='co'># TODO: Closure or Builtin or Special, returns 99</span>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

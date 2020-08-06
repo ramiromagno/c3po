@@ -151,17 +151,21 @@ constants defined by this enumerated type are: <code>FALSE</code> (<code>= 0</co
 <p>In <a href='https://github.com/wch/r-source/blob/trunk/src/include/R_ext/Boolean.h'>Boolean.h</a>.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>rboolean</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>inline</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/inline/man/cfunction.html'>cfunction</a></span>(<span class='kw'>NULL</span>,
+    <pre class="examples"><div class='input'><span class='kw'>rboolean</span> <span class='op'>&lt;-</span> <span class='kw'>inline</span>::<span class='fu'><a href='https://rdrr.io/pkg/inline/man/cfunction.html'>cfunction</a></span>(<span class='kw'>NULL</span>,
  <span class='st'>' Rboolean false_x = FALSE;
    Rboolean true_x = TRUE;
    Rprintf("Rboolean FALSE is: %d\\n", false_x);
    Rprintf("Rboolean TRUE is: %d\\n", true_x);
    return R_NilValue;
- '</span>)
+ '</span> Rboolean false_x = FALSE;
+   Rboolean true_x = TRUE;
+   Rprintf("Rboolean FALSE is: %d\\n", false_x);
+   Rprintf("Rboolean TRUE is: %d\\n", true_x);
+   return R_NilValue;
+ ')
 
 <span class='fu'><a href='https://rdrr.io/r/base/invisible.html'>invisible</a></span>(<span class='fu'>rboolean</span>())</div><div class='output co'>#&gt; Rboolean FALSE is: 0
-#&gt; Rboolean TRUE is: 1</div><div class='input'>
-</div></pre>
+#&gt; Rboolean TRUE is: 1</div><div class='input'></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
